@@ -1,0 +1,800 @@
+{
+  "split": "development",
+  "task": "synthetic claim and optional cited policy lookup",
+  "comparison": "identical portable outcomes and tool-attempt traces",
+  "frameworks": [
+    {
+      "framework": "langgraph",
+      "version": "0.2.60",
+      "environment": {
+        "python": "3.12.4",
+        "os": "macOS-14.3-arm64-arm-64bit",
+        "pydantic": "2.10.5",
+        "pypdf": "7.1.1"
+      },
+      "inputs": {
+        "source_manifest_sha256": "4d5e5bdbbe7f237df8a35bdafbbd092ee80050bf67cdec012adf971b825c13a0",
+        "claims_sha256": "87736b345f3f0a6abca2a90e7934abbd47ed214d60915f9ce75892462a4534ca",
+        "case_definitions_sha256": "5c814fc92110eb812a50dee12e0643034eb94de758d4f252e15dbbf8de5d95f5"
+      },
+      "metrics": {
+        "correct_cases": 8,
+        "native_tool_trace_matches": 8,
+        "schema_valid_cases": 8,
+        "warm_approved_runs": 7,
+        "warm_approved_p50_ms": 4.573,
+        "warm_approved_max_ms": 5.568,
+        "peak_rss_bytes": 86540288
+      },
+      "cases": [
+        {
+          "case": "approved",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "approval",
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "agent"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "denied",
+          "status": "abstain",
+          "reason": "approval_denied",
+          "citation_ids": [],
+          "tool_outcomes": [],
+          "native_events": [
+            "approval",
+            "approval",
+            "agent"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "missing_claim",
+          "status": "abstain",
+          "reason": "claim_not_found",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "approval",
+            "lookup_synthetic_claim",
+            "agent"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "incomplete_claim",
+          "status": "escalate",
+          "reason": "fixture_checks_failed",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "approval",
+            "lookup_synthetic_claim",
+            "agent"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "transient_claim_timeout",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "timeout"
+            ],
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "approval",
+            "lookup_synthetic_claim",
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "agent"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "persistent_policy_timeout",
+          "status": "escalate",
+          "reason": "tool_timeout",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "approval",
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "lookup_policy",
+            "agent"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "budget_exhausted",
+          "status": "escalate",
+          "reason": "tool_budget_exhausted",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "approval",
+            "lookup_synthetic_claim",
+            "agent",
+            "agent"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "untrusted_policy_query",
+          "status": "escalate",
+          "reason": "policy_evidence_missing",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "approval",
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "agent"
+          ],
+          "result_schema_valid": true
+        }
+      ]
+    },
+    {
+      "framework": "semantic_kernel",
+      "version": "1.37.0",
+      "environment": {
+        "python": "3.12.4",
+        "os": "macOS-14.3-arm64-arm-64bit",
+        "pydantic": "2.11.10",
+        "pypdf": "7.1.1"
+      },
+      "inputs": {
+        "source_manifest_sha256": "4d5e5bdbbe7f237df8a35bdafbbd092ee80050bf67cdec012adf971b825c13a0",
+        "claims_sha256": "87736b345f3f0a6abca2a90e7934abbd47ed214d60915f9ce75892462a4534ca",
+        "case_definitions_sha256": "5c814fc92110eb812a50dee12e0643034eb94de758d4f252e15dbbf8de5d95f5"
+      },
+      "metrics": {
+        "correct_cases": 8,
+        "native_tool_trace_matches": 8,
+        "schema_valid_cases": 8,
+        "warm_approved_runs": 7,
+        "warm_approved_p50_ms": 0.288,
+        "warm_approved_max_ms": 0.374,
+        "peak_rss_bytes": 96550912
+      },
+      "cases": [
+        {
+          "case": "approved",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "denied",
+          "status": "abstain",
+          "reason": "approval_denied",
+          "citation_ids": [],
+          "tool_outcomes": [],
+          "native_events": [
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "missing_claim",
+          "status": "abstain",
+          "reason": "claim_not_found",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "lookup_synthetic_claim",
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "incomplete_claim",
+          "status": "escalate",
+          "reason": "fixture_checks_failed",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "lookup_synthetic_claim",
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "transient_claim_timeout",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "timeout"
+            ],
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "lookup_synthetic_claim",
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "persistent_policy_timeout",
+          "status": "escalate",
+          "reason": "tool_timeout",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ]
+          ],
+          "native_events": [
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "lookup_policy",
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "budget_exhausted",
+          "status": "escalate",
+          "reason": "tool_budget_exhausted",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "lookup_synthetic_claim",
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "untrusted_policy_query",
+          "status": "escalate",
+          "reason": "policy_evidence_missing",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "review"
+          ],
+          "result_schema_valid": true
+        }
+      ]
+    },
+    {
+      "framework": "adk",
+      "version": "1.18.0",
+      "environment": {
+        "python": "3.12.4",
+        "os": "macOS-14.3-arm64-arm-64bit",
+        "pydantic": "2.14.3",
+        "pypdf": "7.1.1"
+      },
+      "inputs": {
+        "source_manifest_sha256": "4d5e5bdbbe7f237df8a35bdafbbd092ee80050bf67cdec012adf971b825c13a0",
+        "claims_sha256": "87736b345f3f0a6abca2a90e7934abbd47ed214d60915f9ce75892462a4534ca",
+        "case_definitions_sha256": "5c814fc92110eb812a50dee12e0643034eb94de758d4f252e15dbbf8de5d95f5"
+      },
+      "metrics": {
+        "correct_cases": 8,
+        "native_tool_trace_matches": 8,
+        "schema_valid_cases": 8,
+        "warm_approved_runs": 7,
+        "warm_approved_p50_ms": 1.76,
+        "warm_approved_max_ms": 2.201,
+        "peak_rss_bytes": 367411200
+      },
+      "cases": [
+        {
+          "case": "approved",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "lookup_synthetic_claim",
+            "claim",
+            "lookup_policy",
+            "policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "denied",
+          "status": "abstain",
+          "reason": "approval_denied",
+          "citation_ids": [],
+          "tool_outcomes": [],
+          "native_events": [
+            "approval",
+            "claim",
+            "policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "missing_claim",
+          "status": "abstain",
+          "reason": "claim_not_found",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "lookup_synthetic_claim",
+            "claim",
+            "policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "incomplete_claim",
+          "status": "escalate",
+          "reason": "fixture_checks_failed",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "lookup_synthetic_claim",
+            "claim",
+            "policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "transient_claim_timeout",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "timeout"
+            ],
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "lookup_synthetic_claim",
+            "lookup_synthetic_claim",
+            "claim",
+            "lookup_policy",
+            "policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "persistent_policy_timeout",
+          "status": "escalate",
+          "reason": "tool_timeout",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "lookup_synthetic_claim",
+            "claim",
+            "lookup_policy",
+            "lookup_policy",
+            "policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "budget_exhausted",
+          "status": "escalate",
+          "reason": "tool_budget_exhausted",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "lookup_synthetic_claim",
+            "claim",
+            "policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "untrusted_policy_query",
+          "status": "escalate",
+          "reason": "policy_evidence_missing",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "approval",
+            "lookup_synthetic_claim",
+            "claim",
+            "lookup_policy",
+            "policy"
+          ],
+          "result_schema_valid": true
+        }
+      ]
+    },
+    {
+      "framework": "autogen",
+      "version": "0.7.5",
+      "environment": {
+        "python": "3.12.4",
+        "os": "macOS-14.3-arm64-arm-64bit",
+        "pydantic": "2.14.3",
+        "pypdf": "7.1.1"
+      },
+      "inputs": {
+        "source_manifest_sha256": "4d5e5bdbbe7f237df8a35bdafbbd092ee80050bf67cdec012adf971b825c13a0",
+        "claims_sha256": "87736b345f3f0a6abca2a90e7934abbd47ed214d60915f9ce75892462a4534ca",
+        "case_definitions_sha256": "5c814fc92110eb812a50dee12e0643034eb94de758d4f252e15dbbf8de5d95f5"
+      },
+      "metrics": {
+        "correct_cases": 8,
+        "native_tool_trace_matches": 8,
+        "schema_valid_cases": 8,
+        "warm_approved_runs": 7,
+        "warm_approved_p50_ms": 1.097,
+        "warm_approved_max_ms": 6.772,
+        "peak_rss_bytes": 55033856
+      },
+      "cases": [
+        {
+          "case": "approved",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "review",
+            "lookup_synthetic_claim",
+            "lookup_policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "denied",
+          "status": "abstain",
+          "reason": "approval_denied",
+          "citation_ids": [],
+          "tool_outcomes": [],
+          "native_events": [
+            "review"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "missing_claim",
+          "status": "abstain",
+          "reason": "claim_not_found",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "review",
+            "lookup_synthetic_claim"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "incomplete_claim",
+          "status": "escalate",
+          "reason": "fixture_checks_failed",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "review",
+            "lookup_synthetic_claim"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "transient_claim_timeout",
+          "status": "review",
+          "reason": "human_review_required",
+          "citation_ids": [
+            "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+          ],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "timeout"
+            ],
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "review",
+            "lookup_synthetic_claim",
+            "lookup_synthetic_claim",
+            "lookup_policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "persistent_policy_timeout",
+          "status": "escalate",
+          "reason": "tool_timeout",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ],
+            [
+              "lookup_policy",
+              "timeout"
+            ]
+          ],
+          "native_events": [
+            "review",
+            "lookup_synthetic_claim",
+            "lookup_policy",
+            "lookup_policy"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "budget_exhausted",
+          "status": "escalate",
+          "reason": "tool_budget_exhausted",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "review",
+            "lookup_synthetic_claim"
+          ],
+          "result_schema_valid": true
+        },
+        {
+          "case": "untrusted_policy_query",
+          "status": "escalate",
+          "reason": "policy_evidence_missing",
+          "citation_ids": [],
+          "tool_outcomes": [
+            [
+              "lookup_synthetic_claim",
+              "ok"
+            ],
+            [
+              "lookup_policy",
+              "ok"
+            ]
+          ],
+          "native_events": [
+            "review",
+            "lookup_synthetic_claim",
+            "lookup_policy"
+          ],
+          "result_schema_valid": true
+        }
+      ]
+    }
+  ]
+}

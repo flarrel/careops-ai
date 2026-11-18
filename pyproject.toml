@@ -10,6 +10,10 @@ requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [project.optional-dependencies]
+comparison = ["pypdf==7.1.1", "jsonschema==4.26.0", "pydantic>=2.10.5,<3"]
+comparison-sk = ["semantic-kernel==1.37.0"]
+comparison-adk = ["google-adk==1.18.0"]
+comparison-autogen = ["autogen-core==0.7.5"]
 agent = [
   "langgraph==0.2.60",
   "langchain-core==0.3.29",

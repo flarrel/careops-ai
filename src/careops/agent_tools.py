@@ -2,7 +2,6 @@
 
 from typing import Annotated, Literal
 
-from langchain_core.tools import StructuredTool
 from pydantic import BaseModel, ConfigDict, Field, TypeAdapter
 
 from careops.answer import MAX_QUERY_CHARS
@@ -70,6 +69,8 @@ def load_claims(path=DEV_CLAIMS):
 
 
 def make_tools(read_claim, answer_policy):
+    from langchain_core.tools import StructuredTool
+
     def lookup_synthetic_claim(claim_id):
         facts = read_claim(claim_id)
         return SyntheticClaim.model_validate(facts).model_dump() if facts is not None else None

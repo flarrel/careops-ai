@@ -40,7 +40,7 @@ The [answer service guide](docs/grounded-answers.md) covers the local API, cited
 
 ## Review agent
 
-The [review agent guide](docs/review-agent.md) covers human approval, synthetic claim checks, policy lookup, and redacted traces.
+The [review agent guide](docs/review-agent.md) covers human approval, synthetic claim checks, policy lookup, and redacted traces. The [framework comparison](docs/agent-frameworks.md) reports local parity, failure behavior, and resource measurements.
 
 ## Planned runtime
 
