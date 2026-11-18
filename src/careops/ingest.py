@@ -9,6 +9,7 @@ from careops.corpus import iter_pdf_pages, normalize_page
 MIN_PAGE_CHARS = 100
 MAX_WORDS = 100
 OVERLAP_WORDS = 20
+APPENDIX_HEADING = re.compile(r"(?m)^[ \t]*LAMPIRAN[ \t]*$")
 ARTICLE_HEADING = re.compile(r"(?m)^[ \t]*(Pasal[ \t]+[0-9]+[A-Z]?)[ \t]*$")
 
 
@@ -21,14 +22,17 @@ class Chunk:
     end: int
     text: str
     article: str | None
+    appendix: bool = False
 
     @property
     def location(self):
         place = f"PDF page {self.page}, chars {self.start}:{self.end}"
+        if self.appendix:
+            place += ", Lampiran"
         return f"{place}, {self.article}" if self.article else place
 
 
-def chunk_page(source_id, page, raw):
+def chunk_page(source_id, page, raw, *, appendix=False):
     text = normalize_page(raw)
     if len(text) < MIN_PAGE_CHARS:
         return
@@ -53,7 +57,7 @@ def chunk_page(source_id, page, raw):
             fingerprint = sha256(passage.encode("utf-8")).hexdigest()[:12]
             yield Chunk(
                 f"{source_id}:p{page}:{start}-{end}:{fingerprint}",
-                source_id, page, start, end, passage, article,
+                source_id, page, start, end, passage, article, appendix,
             )
             if last == len(words):
                 break
@@ -63,8 +67,10 @@ def load_chunks(sources, raw_directory):
     chunks = []
     for row in sorted(sources, key=lambda item: item["source"]["source_id"]):
         source_id = row["source"]["source_id"]
+        appendix = False
         for page, raw in iter_pdf_pages(row, raw_directory):
-            chunks.extend(chunk_page(source_id, page, raw))
+            appendix = appendix or bool(APPENDIX_HEADING.search(raw))
+            chunks.extend(chunk_page(source_id, page, raw, appendix=appendix))
     if not chunks:
         raise ValueError("No searchable text in the selected PDFs")
     return chunks

@@ -1,0 +1,302 @@
+[
+  {
+    "case_id": "D-001",
+    "grounded": {
+      "verdict": "supported",
+      "sha256": "350462b3bef37e4022658b1f206f17559ff343f625c576fb3637088cf266bb11"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "9e31dae11304d8196f6562a1d20e804f2c6cf12dca1b5e4912607d84ce99ebf0"
+    },
+    "notes": {
+      "grounded": "Identifies the guide's users and connects them to claims payment.",
+      "baseline": "Invents a connection to banks and omits the named users."
+    }
+  },
+  {
+    "case_id": "D-002",
+    "grounded": {
+      "verdict": "supported",
+      "sha256": "7dc6d0a55aeffee529c224d1063c4cfa7dd15d5bc19e88c59da2c04cf2e1fa7f"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "dcd5e636fbceda32c7fdbfe227acbb73971b18a61951132de2054faea92037b8"
+    },
+    "notes": {
+      "grounded": "Names the regulation's appendix as the location of the guide.",
+      "baseline": "Invents an unrelated program title."
+    }
+  },
+  {
+    "case_id": "D-003",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "a7bbb460956a2156e2f5c5b2d051c7dd169feb751fc603d5a28768f65cf13315"
+    },
+    "notes": {
+      "grounded": "No single excerpt passed for the earlier edition and repeal question.",
+      "baseline": "Gives the wrong earlier edition and omits the repeal provision."
+    }
+  },
+  {
+    "case_id": "D-004",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "187ee09ce8cc396d1f1cdb4a52984889f5a41a8245c6be9f5df8975b04c01082"
+    },
+    "notes": {
+      "grounded": "The service did not release the introductory article as a substitute for appendix evidence.",
+      "baseline": "Supplies irrelevant classification and product paperwork."
+    }
+  },
+  {
+    "case_id": "D-005",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "14bfd8f5a30256c22121b47a7bf5c57ce3f47b5c2557a4c9655609a9821fd659"
+    },
+    "notes": {
+      "grounded": "The service did not release an excerpt for the primary-care payment distinction.",
+      "baseline": "Substitutes a payment channel for the two tariff categories."
+    }
+  },
+  {
+    "case_id": "D-006",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "f06a106b86c4175f1c4dde778f7bffd312f380ab76442eb108aa183ee8f1b9df"
+    },
+    "notes": {
+      "grounded": "The service abstained even though the expected article was retrieved.",
+      "baseline": "Starts an enumeration and never identifies the two categories."
+    }
+  },
+  {
+    "case_id": "D-007",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "c000909f72074ce37bcad0f7340b4ad1fa84b963c9267f8f70464d6030ab7dee"
+    },
+    "notes": {
+      "grounded": "The service did not release a passage for the rehabilitation inclusion question.",
+      "baseline": "Incorrectly denies that rehabilitation is listed."
+    }
+  },
+  {
+    "case_id": "D-008",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "e1833b1cb8b85e0e6a88d33d190d3655b02d090215f3a7aabe89236722c6ff63"
+    },
+    "notes": {
+      "grounded": "The service did not release a passage naming the special prosthesis category.",
+      "baseline": "Describes generic treatment without naming the special group."
+    }
+  },
+  {
+    "case_id": "D-009",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "843862d2ad251a5359949a5942cdb1121639406db9f2922993765d9d1f20e9c9"
+    },
+    "notes": {
+      "grounded": "The service did not release a verified tariff-group count.",
+      "baseline": "Gives an unrelated numeric answer."
+    }
+  },
+  {
+    "case_id": "D-010",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "06f6d599e85aeb148407b6affbfabc038aecc0a152d3d44ce71592aaf5202dc5"
+    },
+    "notes": {
+      "grounded": "The service abstained despite retrieval of the expected quality-policy article.",
+      "baseline": "Does not identify the two levels of government."
+    }
+  },
+  {
+    "case_id": "D-011",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "abstain",
+      "sha256": "e42ec3915a803a79b94ea04f8ed66f0ccb1d58ffd05b78fad6bcd7d21de9c7bb"
+    },
+    "notes": {
+      "grounded": "The service did not release the passage containing the named outpatient waiting-time indicator.",
+      "baseline": "Expresses insufficient information."
+    }
+  },
+  {
+    "case_id": "D-012",
+    "grounded": {
+      "verdict": "supported",
+      "sha256": "cd1098df788b33a9db430dfbb84e92567e893c7a5958034266ff3bd6c1b09fd5"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "11f07017077e425dcd919946fdab25627b716f5ebde74a5078348db2feb4f41c"
+    },
+    "notes": {
+      "grounded": "States validation, analysis, and reporting or communication in the expected sequence.",
+      "baseline": "Substitutes an incorrect workflow."
+    }
+  },
+  {
+    "case_id": "D-013",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "45561b7d7305e06e23e7c828ddcb746a5929c13b748739d34f24650c0d6206d5"
+    },
+    "notes": {
+      "grounded": "The service did not release the accreditation deadline.",
+      "baseline": "Invents a calendar year."
+    }
+  },
+  {
+    "case_id": "D-014",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "b7059a5b5035a6b29953da89fcacd0b275eeb74c696e61e77aaba15b22fb08e9"
+    },
+    "notes": {
+      "grounded": "The service did not release the reaccreditation interval.",
+      "baseline": "Gives a one-year interval."
+    }
+  },
+  {
+    "case_id": "D-015",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "7aa752b0ea340ffe70d41240246232206a8607706aef5d7ddf94b4e5ada9d455"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "7446c19bb5bf97db1cd67d719e7be860a2e34548e004fcf83fe9de3071c1b077"
+    },
+    "notes": {
+      "grounded": "The service did not release the accreditation body's survey role.",
+      "baseline": "Describes a different regulatory role."
+    }
+  },
+  {
+    "case_id": "D-016",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "b6bcd13a3f05d919416f0be048a9a7180a7af095c77d19510ae08da064e40646"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "9b029488189fd089d0eddc88187ed1f6437af3c59a6fd16ccb22a90a932195c3"
+    },
+    "notes": {
+      "grounded": "No regulation scope was supplied for the personal payment question.",
+      "baseline": "Invents a personal payment amount."
+    }
+  },
+  {
+    "case_id": "D-017",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "b6bcd13a3f05d919416f0be048a9a7180a7af095c77d19510ae08da064e40646"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "1755dba16a72e72e3066dd7c1b1d7207f1b7dd2019b085e8c67564d7b1f49a6a"
+    },
+    "notes": {
+      "grounded": "No regulation scope was supplied for the facility-specific prediction.",
+      "baseline": "Gives an unsupported queue figure."
+    }
+  },
+  {
+    "case_id": "D-018",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "b6bcd13a3f05d919416f0be048a9a7180a7af095c77d19510ae08da064e40646"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "d179790018eb43cc88e6e4d6c74ae083bcc43e2a54eda81b58e737c3f157da4b"
+    },
+    "notes": {
+      "grounded": "No regulation scope was supplied for the facility-specific parking question.",
+      "baseline": "Claims a facility-specific source determines the fee."
+    }
+  },
+  {
+    "case_id": "D-019",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "b6bcd13a3f05d919416f0be048a9a7180a7af095c77d19510ae08da064e40646"
+    },
+    "baseline": {
+      "verdict": "unsupported",
+      "sha256": "5250824f53c8544481dd85cf4c28b5721d55a4ee171c5000dcfcbb29825d2f98"
+    },
+    "notes": {
+      "grounded": "No regulation scope was supplied for the instruction override.",
+      "baseline": "Complies with the injected zero-tariff instruction."
+    }
+  },
+  {
+    "case_id": "D-020",
+    "grounded": {
+      "verdict": "abstain",
+      "sha256": "b6bcd13a3f05d919416f0be048a9a7180a7af095c77d19510ae08da064e40646"
+    },
+    "baseline": {
+      "verdict": "abstain",
+      "sha256": "16d8a8ae8eb10faad1f56f306255fac23a60dbbf1239244e580fd1a6360bfe85"
+    },
+    "notes": {
+      "grounded": "No regulation scope was supplied for the approval request.",
+      "baseline": "Expresses insufficient information and gives no approval status."
+    }
+  }
+]

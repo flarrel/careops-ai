@@ -10,6 +10,15 @@ requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [project.optional-dependencies]
+rag = [
+  "pypdf==7.1.1",
+  "scikit-learn==1.6.1",
+  "torch>=2.6,<3",
+  "transformers==4.47.1",
+  "fastapi==0.115.6",
+  "pydantic==2.10.5",
+  "uvicorn==0.34.0",
+]
 retrieval = [
   "pypdf==7.1.1",
   "scikit-learn==1.6.1",
@@ -35,6 +44,7 @@ full = [
 ]
 dev = [
   "pytest==8.3.4",
+  "httpx==0.28.1",
   "ruff==0.9.2",
 ]
 

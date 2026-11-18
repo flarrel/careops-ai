@@ -10,8 +10,8 @@ MODEL_SPEC = Path("data/manifests/embedding.json")
 MODEL_DIRECTORY = Path("models/multilingual-e5-small")
 
 
-def load_model_spec():
-    return json.loads(MODEL_SPEC.read_text(encoding="utf-8"))
+def load_model_spec(spec_path=MODEL_SPEC):
+    return json.loads(spec_path.read_text(encoding="utf-8"))
 
 
 def check_model_file(path, info):
@@ -22,8 +22,8 @@ def check_model_file(path, info):
             raise ValueError(f"{path.name}: model SHA-256 mismatch")
 
 
-def fetch_model(directory):
-    spec = load_model_spec()
+def fetch_model(directory, spec_path=MODEL_SPEC):
+    spec = load_model_spec(spec_path)
     base = f"https://huggingface.co/{spec['repository']}/resolve/{spec['revision']}"
     directory.mkdir(parents=True, exist_ok=True)
     for name, info in spec["files"].items():

@@ -34,6 +34,10 @@ See the [corpus and evaluation guide](docs/corpus.md) for pinned sources, the ex
 
 The [retrieval guide](docs/retrieval.md) covers local passage search, evidence packets, and the development benchmark.
 
+## Grounded policy answers
+
+The [answer service guide](docs/grounded-answers.md) covers the local API, cited excerpts, abstention, and evaluation.
+
 ## Planned runtime
 
 - Python 3.12
