@@ -1,0 +1,11 @@
+{
+  "schema_version": "careops-intake-1",
+  "source": "emr",
+  "synthetic": true,
+  "reference": "SYN-D-099",
+  "service": "outpatient",
+  "local_service_code": "SYN-OUT-A",
+  "amount": 1234567,
+  "currency": "IDR",
+  "attachment_codes": ["visit-note"]
+}

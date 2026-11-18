@@ -1,0 +1,16 @@
+{
+    "name": "careops/laravel-consumer",
+    "description": "Local Laravel view of CareOps run outcomes",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "ext-curl": "*",
+        "laravel/framework": "^12.0"
+    },
+    "config": {
+        "platform": {
+            "php": "8.2.0"
+        },
+        "sort-packages": true
+    }
+}

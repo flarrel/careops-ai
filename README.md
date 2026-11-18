@@ -20,6 +20,8 @@ The project will use public, provenance-recorded policy material and project-own
 
 The [local application guide](docs/application.md) starts FastAPI, the Streamlit admin, and the Next.js client for policy and synthetic claim review.
 
+The [integration guide](docs/integrations.md) covers spreadsheet intake, local API consumers, and offline healthcare contracts.
+
 ## Foundation status
 
 The foundation defines the contracts, data policy, threat model, and reduced dependency profile. Run the dependency-free contract tests from the repository root with Python 3.12.

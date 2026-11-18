@@ -16,6 +16,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool
 from careops.agent_tools import ClaimTask, StrictInput, SyntheticClaim
 from careops.agent_trace import JsonlTrace, start_event
 from careops.answer import MAX_QUERY_CHARS, load_answerer
+from careops.corpus import DEV_CLAIMS
 from careops.run_history import HISTORY_PATH, RunHistory
 
 APPROVAL_TTL = 600
@@ -85,7 +86,7 @@ class RunSummary(BaseModel):
 
 
 def create_app(load_service=load_answerer, *, history_path: Path = HISTORY_PATH,
-               clock=monotonic):
+               claims_path: Path = DEV_CLAIMS, clock=monotonic):
     history = RunHistory(history_path)
     pending = {}
     pending_lock = Lock()
@@ -163,7 +164,7 @@ def create_app(load_service=load_answerer, *, history_path: Path = HISTORY_PATH,
                     from careops.agent import load_agent
 
                     trace = JsonlTrace(history_path.with_name("api-agent-traces.jsonl"))
-                    agent = load_agent(policy_answer, trace)
+                    agent = load_agent(policy_answer, trace, claims_path=claims_path)
                 run = agent.start(body.model_dump())
             except (OSError, RuntimeError, ValueError) as exc:
                 history.record("claim", {"status": "error", "reason": "review_unavailable"},
@@ -196,4 +197,7 @@ def create_app(load_service=load_answerer, *, history_path: Path = HISTORY_PATH,
     return app
 
 
-app = create_app(history_path=Path(os.environ.get("CAREOPS_HISTORY_PATH", HISTORY_PATH)))
+app = create_app(
+    history_path=Path(os.environ.get("CAREOPS_HISTORY_PATH", HISTORY_PATH)),
+    claims_path=Path(os.environ.get("CAREOPS_CLAIMS_PATH", DEV_CLAIMS)),
+)

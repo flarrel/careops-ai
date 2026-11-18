@@ -20,3 +20,6 @@ app/web/next-env.d.ts
 app/web/*.tsbuildinfo
 app/web/playwright-report/
 app/web/test-results/
+integrations/php/laravel/vendor/
+integrations/php/laravel/storage/
+integrations/php/laravel/bootstrap/cache/

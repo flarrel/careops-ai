@@ -13,6 +13,7 @@ from langsmith import tracing_context
 from careops.agent_tools import TASK, claim_issues, load_claims, make_tools
 from careops.agent_trace import JsonlTrace, fingerprint, record, start_event
 from careops.contracts import validate_agent_result
+from careops.corpus import DEV_CLAIMS
 
 MAX_TOOL_CALLS = 3
 MAX_ATTEMPTS_PER_TOOL = 2
@@ -180,9 +181,9 @@ class ReviewAgent:
         return ReviewRun(request.model_dump(), self.tools, self.trace, self.budget)
 
 
-def load_agent(answer_policy, trace=None):
+def load_agent(answer_policy, trace=None, *, claims_path=DEV_CLAIMS):
     @cache
     def claims():
-        return load_claims()
+        return load_claims(claims_path)
 
     return ReviewAgent(lambda claim_id: claims().get(claim_id), answer_policy, trace)
