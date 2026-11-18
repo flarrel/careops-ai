@@ -10,6 +10,18 @@ requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [project.optional-dependencies]
+models = [
+  "numpy==2.5.4",
+  "scipy==1.18.1",
+  "pillow==12.3.0",
+  "pydantic==2.10.5",
+  "scikit-learn==1.6.1",
+  "tensorflow==2.21.0",
+  "keras==3.15.1",
+  "torch==2.14.1",
+  "transformers==4.47.1",
+  "matplotlib==3.11.2",
+]
 comparison = ["pypdf==7.1.1", "jsonschema==4.26.0", "pydantic>=2.10.5,<3"]
 comparison-sk = ["semantic-kernel==1.37.0"]
 comparison-adk = ["google-adk==1.18.0"]

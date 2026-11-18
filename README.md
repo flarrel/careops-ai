@@ -42,6 +42,10 @@ The [answer service guide](docs/grounded-answers.md) covers the local API, cited
 
 The [review agent guide](docs/review-agent.md) covers human approval, synthetic claim checks, policy lookup, and redacted traces. The [framework comparison](docs/agent-frameworks.md) reports local parity, failure behavior, and resource measurements.
 
+## Model lab
+
+The [synthetic fixture model lab](docs/model-lab.md) covers data mining, clustering, workload forecasting, and document-vision experiments using four local ML stacks.
+
 ## Planned runtime
 
 - Python 3.12
