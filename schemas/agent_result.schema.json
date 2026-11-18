@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://careops.local/schemas/agent-result.schema.json",
+  "title": "Bounded review result",
+  "type": "object",
+  "required": ["status", "summary", "citations", "tool_calls"],
+  "properties": {
+    "status": {"enum": ["review", "abstain", "escalate"]},
+    "summary": {"type": "string"},
+    "citations": {"type": "array", "items": {"type": "string"}},
+    "tool_calls": {"type": "array", "items": {"type": "string"}},
+    "reason": {"type": "string"}
+  },
+  "additionalProperties": false
+}

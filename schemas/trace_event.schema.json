@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://careops.local/schemas/trace-event.schema.json",
+  "title": "Redacted trace event",
+  "type": "object",
+  "required": ["run_id", "stage", "started_at", "duration_ms", "outcome"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "stage": {"enum": ["ingest", "retrieve", "answer", "tool", "api"]},
+    "started_at": {"type": "string", "minLength": 1},
+    "duration_ms": {"type": "number", "minimum": 0},
+    "outcome": {"enum": ["ok", "error", "abstain", "escalate"]},
+    "error_code": {"type": "string"},
+    "redacted_input_hash": {"type": "string"}
+  },
+  "additionalProperties": false
+}

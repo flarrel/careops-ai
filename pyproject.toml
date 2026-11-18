@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75,<76"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "careops-ai"
+version = "0.1.0"
+description = "Local-first cited policy and synthetic-claims assistant"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.optional-dependencies]
+reduced = [
+  "fastapi==0.115.6",
+  "pydantic==2.10.5",
+  "scikit-learn==1.6.1",
+  "streamlit==1.41.1",
+  "uvicorn==0.34.0",
+]
+full = [
+  "langchain==0.3.14",
+  "langgraph==0.2.60",
+  "sentence-transformers==3.3.1",
+  "transformers==4.47.1",
+]
+dev = [
+  "pytest==8.3.4",
+  "ruff==0.9.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

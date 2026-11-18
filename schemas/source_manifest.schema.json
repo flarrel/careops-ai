@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://careops.local/schemas/source-manifest.schema.json",
+  "title": "Source manifest",
+  "type": "object",
+  "required": ["source_id", "title", "source_url", "retrieved_on", "license_note", "document_version", "sha256"],
+  "properties": {
+    "source_id": {"type": "string", "pattern": "^[A-Za-z0-9._-]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "source_url": {"type": "string", "format": "uri"},
+    "retrieved_on": {"type": "string", "format": "date"},
+    "license_note": {"type": "string", "minLength": 1},
+    "document_version": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "redistribution_allowed": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

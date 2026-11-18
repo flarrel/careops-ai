@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://careops.local/schemas/evidence-packet.schema.json",
+  "title": "Evidence packet",
+  "type": "object",
+  "required": ["query", "items"],
+  "properties": {
+    "query": {"type": "string", "minLength": 1},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chunk_id", "source_id", "text", "score"],
+        "properties": {
+          "chunk_id": {"type": "string", "minLength": 1},
+          "source_id": {"type": "string", "minLength": 1},
+          "text": {"type": "string", "minLength": 1},
+          "score": {"type": "number"},
+          "location": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
