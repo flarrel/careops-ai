@@ -72,7 +72,7 @@ def normalize_page(text):
     return " ".join(unicodedata.normalize("NFKC", text).split())
 
 
-def inspect_pdf(row, directory):
+def iter_pdf_pages(row, directory):
     from pypdf import PdfReader
 
     source_id = row["source"]["source_id"]
@@ -81,16 +81,20 @@ def inspect_pdf(row, directory):
     pdf = PdfReader(path)
     if len(pdf.pages) != row["pdf_pages"]:
         raise ValueError(f"{source_id}: PDF page total changed")
-    stats = {}
     for number in range(1, row["pages_in_scope"] + 1):
-        raw = pdf.pages[number - 1].extract_text() or ""
+        yield number, pdf.pages[number - 1].extract_text() or ""
+
+
+def inspect_pdf(row, directory):
+    stats = {}
+    for number, raw in iter_pdf_pages(row, directory):
         text = normalize_page(raw)
         stats[number] = (len(text), digest(text.encode("utf-8")), text.count("�"))
     lengths = [length for length, _, _ in stats.values()]
     counts = Counter(fingerprint for length, fingerprint, _ in stats.values() if length)
     return {
-        "source_id": source_id,
-        "pdf_pages": len(pdf.pages),
+        "source_id": row["source"]["source_id"],
+        "pdf_pages": row["pdf_pages"],
         "pages_inspected": len(lengths),
         "empty_pages": [number for number, (length, _, _) in stats.items() if length == 0],
         "short_pages": [number for number, (length, _, _) in stats.items() if 0 < length < 100],

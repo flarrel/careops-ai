@@ -1,0 +1,2562 @@
+{
+  "split": "development",
+  "k": 5,
+  "questions": 15,
+  "source_manifest_sha256": "4d5e5bdbbe7f237df8a35bdafbbd092ee80050bf67cdec012adf971b825c13a0",
+  "cases_sha256": "1b6792ae755f928b045207499d4d3b2add981a4f2f4020229a903b0e175a6a25",
+  "chunks_by_source": {
+    "accreditation-2022": 77,
+    "ina-cbg-2016": 16,
+    "ina-cbg-2021": 142,
+    "jkn-tariffs-2023": 182,
+    "quality-2022": 24
+  },
+  "environment": {
+    "python": "3.12.4",
+    "machine": "arm64",
+    "os": "macOS-14.3-arm64-arm-64bit",
+    "device": "cpu",
+    "torch_threads": 4,
+    "versions": {
+      "pypdf": "7.1.1",
+      "scikit-learn": "1.6.1",
+      "numpy": "2.5.4",
+      "torch": "2.14.1",
+      "transformers": "4.47.1",
+      "langchain-core": "0.3.29",
+      "llama-index-core": "0.12.11"
+    }
+  },
+  "methods": {
+    "tfidf": {
+      "recall_at_5": 0.7333,
+      "mrr_at_5": 0.3822,
+      "citation_source_hit_rate_at_5": 1,
+      "p50_ms": 0.31,
+      "p95_ms": 0.39,
+      "numeric_payload_bytes": 631036,
+      "cases": [
+        {
+          "case_id": "D-001",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:658-1448:d93671b6a845"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:1290-1630:83a2c2f3024e"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:4-318:df1bfbe28fa7"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            }
+          ]
+        },
+        {
+          "case_id": "D-002",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:38-173:b430613111a5"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:960-1177:69554b5d3d70"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:319-545:20b76ae664f2"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            }
+          ]
+        },
+        {
+          "case_id": "D-003",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:38-173:b430613111a5"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 23,
+              "chunk_id": "ina-cbg-2021:p23:0-735:a64a2e2b2e43"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 21,
+              "chunk_id": "ina-cbg-2021:p21:480-1155:1cc0d0b86bd5"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:0-674:54c2eb88b59d"
+            }
+          ]
+        },
+        {
+          "case_id": "D-004",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:960-1177:69554b5d3d70"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:319-545:20b76ae664f2"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:1758-2132:bf54499f34aa"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 48,
+              "chunk_id": "ina-cbg-2021:p48:599-1305:ea50f6553844"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:0-674:54c2eb88b59d"
+            }
+          ]
+        },
+        {
+          "case_id": "D-005",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:658-1448:d93671b6a845"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:1262-2023:0db862451d40"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:552-1346:45b721136697"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            }
+          ]
+        },
+        {
+          "case_id": "D-006",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.25,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:1262-2023:0db862451d40"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:1538-2286:47e7fea4748d"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:38-173:b430613111a5"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:1178-1455:75e26f585dbc"
+            }
+          ]
+        },
+        {
+          "case_id": "D-007",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 21,
+              "chunk_id": "ina-cbg-2021:p21:480-1155:1cc0d0b86bd5"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:38-173:b430613111a5"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 23,
+              "chunk_id": "jkn-tariffs-2023:p23:5-326:863d9827c192"
+            }
+          ]
+        },
+        {
+          "case_id": "D-008",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.2,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 4,
+              "chunk_id": "jkn-tariffs-2023:p4:4-376:c906a05b9a0b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 9,
+              "chunk_id": "jkn-tariffs-2023:p9:924-1637:94d39f561a66"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 24,
+              "chunk_id": "jkn-tariffs-2023:p24:0-660:717e1e5b1880"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:0-37:da205ee40d0b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:5-518:8c623d0932fe"
+            }
+          ]
+        },
+        {
+          "case_id": "D-009",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 19,
+              "chunk_id": "jkn-tariffs-2023:p19:935-1379:f7c44c6ec3af"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 12,
+              "chunk_id": "ina-cbg-2021:p12:0-632:6fcf22a1bd06"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 53,
+              "chunk_id": "ina-cbg-2021:p53:1062-1729:001f9e001850"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:38-173:b430613111a5"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 26,
+              "chunk_id": "jkn-tariffs-2023:p26:0-695:2291288c9473"
+            }
+          ]
+        },
+        {
+          "case_id": "D-010",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:959-1146:eee04723873e"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:1258-1495:5d9f8b077431"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            }
+          ]
+        },
+        {
+          "case_id": "D-011",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 19,
+              "chunk_id": "jkn-tariffs-2023:p19:378-709:fd69b09415f6"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 4,
+              "chunk_id": "quality-2022:p4:572-1305:f869cddbda09"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:519-1119:c675d4769a9b"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            }
+          ]
+        },
+        {
+          "case_id": "D-012",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:959-1146:eee04723873e"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:1758-2132:bf54499f34aa"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            }
+          ]
+        },
+        {
+          "case_id": "D-013",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.25,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:0-55:98d65980bf6e"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:116-904:7e7f25e3d0cc"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 12,
+              "chunk_id": "accreditation-2022:p12:118-552:17955bccc0db"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 4,
+              "chunk_id": "accreditation-2022:p4:1160-1497:8070a837bfa3"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 8,
+              "chunk_id": "accreditation-2022:p8:1453-1930:0653afb402c5"
+            }
+          ]
+        },
+        {
+          "case_id": "D-014",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.2,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:0-115:ce6a3cf35dcc"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 6,
+              "chunk_id": "accreditation-2022:p6:1152-1391:dc0594e65944"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 44,
+              "chunk_id": "ina-cbg-2021:p44:1123-1800:013489555aca"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 6,
+              "chunk_id": "accreditation-2022:p6:497-1321:23e889e31cd3"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 4,
+              "chunk_id": "accreditation-2022:p4:1498-1709:9af0ddc3cdc9"
+            }
+          ]
+        },
+        {
+          "case_id": "D-015",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:56-865:dacb6bd9be2d"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:1301-1793:8c25bd08c16d"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:643-1442:0f398757dfb6"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 6,
+              "chunk_id": "accreditation-2022:p6:497-1321:23e889e31cd3"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 12,
+              "chunk_id": "accreditation-2022:p12:1929-2035:cf8a5cc20620"
+            }
+          ]
+        }
+      ]
+    },
+    "dense": {
+      "recall_at_5": 0.6333,
+      "mrr_at_5": 0.4189,
+      "citation_source_hit_rate_at_5": 1,
+      "p50_ms": 11.95,
+      "p95_ms": 23.99,
+      "numeric_payload_bytes": 677376,
+      "cases": [
+        {
+          "case_id": "D-001",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.25,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:0-439:20385ecefc42"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:0-794:44c2c0e7c145"
+            }
+          ]
+        },
+        {
+          "case_id": "D-002",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:0-794:44c2c0e7c145"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:4-318:df1bfbe28fa7"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:1258-1495:5d9f8b077431"
+            }
+          ]
+        },
+        {
+          "case_id": "D-003",
+          "page_recall": 0.5,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:440-736:08a38bcf926b"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:642-1411:3822e0497049"
+            }
+          ]
+        },
+        {
+          "case_id": "D-004",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:533-1139:03e2226d1991"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 49,
+              "chunk_id": "ina-cbg-2021:p49:1086-1385:7f13f66d4eb2"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 49,
+              "chunk_id": "ina-cbg-2021:p49:0-680:ca7c17c10bea"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:1017-1264:f21ae2307ed7"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 2,
+              "chunk_id": "quality-2022:p2:590-1133:9b0c1ca66bdf"
+            }
+          ]
+        },
+        {
+          "case_id": "D-005",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 28,
+              "chunk_id": "jkn-tariffs-2023:p28:601-1353:2fb74a44eeb8"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:0-716:b237dd3c1c65"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:658-1448:d93671b6a845"
+            }
+          ]
+        },
+        {
+          "case_id": "D-006",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:552-1346:45b721136697"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 29,
+              "chunk_id": "jkn-tariffs-2023:p29:0-731:d17719ee298d"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            }
+          ]
+        },
+        {
+          "case_id": "D-007",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 21,
+              "chunk_id": "ina-cbg-2021:p21:480-1155:1cc0d0b86bd5"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            }
+          ]
+        },
+        {
+          "case_id": "D-008",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:5-518:8c623d0932fe"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 13,
+              "chunk_id": "ina-cbg-2021:p13:394-1157:ade9f2106402"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 14,
+              "chunk_id": "ina-cbg-2021:p14:0-678:4ecf0a43a292"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 13,
+              "chunk_id": "ina-cbg-2021:p13:996-1392:3f3e239e90b1"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            }
+          ]
+        },
+        {
+          "case_id": "D-009",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:519-1119:c675d4769a9b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 23,
+              "chunk_id": "jkn-tariffs-2023:p23:5-326:863d9827c192"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 26,
+              "chunk_id": "jkn-tariffs-2023:p26:0-695:2291288c9473"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 21,
+              "chunk_id": "jkn-tariffs-2023:p21:768-1439:fca2dfa72fc9"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 19,
+              "chunk_id": "jkn-tariffs-2023:p19:935-1379:f7c44c6ec3af"
+            }
+          ]
+        },
+        {
+          "case_id": "D-010",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:0-55:98d65980bf6e"
+            }
+          ]
+        },
+        {
+          "case_id": "D-011",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.2,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 52,
+              "chunk_id": "ina-cbg-2021:p52:461-1050:f419c0457198"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 2,
+              "chunk_id": "quality-2022:p2:590-1133:9b0c1ca66bdf"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 4,
+              "chunk_id": "quality-2022:p4:0-710:b42ace19a673"
+            }
+          ]
+        },
+        {
+          "case_id": "D-012",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            }
+          ]
+        },
+        {
+          "case_id": "D-013",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 1,
+              "chunk_id": "accreditation-2022:p1:0-820:e870a1c39036"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 15,
+              "chunk_id": "accreditation-2022:p15:45-782:d38e332ebd74"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 15,
+              "chunk_id": "accreditation-2022:p15:1213-1916:e04db6a422e0"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 3,
+              "chunk_id": "accreditation-2022:p3:0-817:67cf13297ead"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            }
+          ]
+        },
+        {
+          "case_id": "D-014",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 3,
+              "chunk_id": "accreditation-2022:p3:0-817:67cf13297ead"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:1784-2419:0ef7d1911b17"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:937-1691:22a61139d2f6"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:116-904:7e7f25e3d0cc"
+            }
+          ]
+        },
+        {
+          "case_id": "D-015",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:56-865:dacb6bd9be2d"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:1537-2279:96f098d0206a"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 4,
+              "chunk_id": "accreditation-2022:p4:1710-2000:9996d6b4658e"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 11,
+              "chunk_id": "accreditation-2022:p11:1867-2247:6119c014a02a"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:866-1692:f6cf676cb2ff"
+            }
+          ]
+        }
+      ]
+    },
+    "reranked": {
+      "recall_at_5": 0.9,
+      "mrr_at_5": 0.5467,
+      "citation_source_hit_rate_at_5": 1,
+      "p50_ms": 12.09,
+      "p95_ms": 20.46,
+      "numeric_payload_bytes": 1308412,
+      "cases": [
+        {
+          "case_id": "D-001",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:4-318:df1bfbe28fa7"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:0-439:20385ecefc42"
+            }
+          ]
+        },
+        {
+          "case_id": "D-002",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.2,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:319-545:20b76ae664f2"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:0-794:44c2c0e7c145"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:960-1177:69554b5d3d70"
+            }
+          ]
+        },
+        {
+          "case_id": "D-003",
+          "page_recall": 0.5,
+          "reciprocal_rank": 0.3333333333333333,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:642-1411:3822e0497049"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:440-736:08a38bcf926b"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            }
+          ]
+        },
+        {
+          "case_id": "D-004",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:533-1139:03e2226d1991"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 49,
+              "chunk_id": "ina-cbg-2021:p49:1086-1385:7f13f66d4eb2"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 51,
+              "chunk_id": "ina-cbg-2021:p51:0-654:052e97ff9d64"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 52,
+              "chunk_id": "ina-cbg-2021:p52:461-1050:f419c0457198"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:1758-2132:bf54499f34aa"
+            }
+          ]
+        },
+        {
+          "case_id": "D-005",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.25,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:658-1448:d93671b6a845"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:552-1346:45b721136697"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 4,
+              "chunk_id": "jkn-tariffs-2023:p4:377-1130:e3f00ff303b0"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 28,
+              "chunk_id": "jkn-tariffs-2023:p28:601-1353:2fb74a44eeb8"
+            }
+          ]
+        },
+        {
+          "case_id": "D-006",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:552-1346:45b721136697"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:1178-1455:75e26f585dbc"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2016:p1:0-789:37dfd4554060"
+            }
+          ]
+        },
+        {
+          "case_id": "D-007",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 21,
+              "chunk_id": "ina-cbg-2021:p21:480-1155:1cc0d0b86bd5"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1577-1965:cba4d959c697"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 21,
+              "chunk_id": "jkn-tariffs-2023:p21:768-1439:fca2dfa72fc9"
+            }
+          ]
+        },
+        {
+          "case_id": "D-008",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:5-518:8c623d0932fe"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 13,
+              "chunk_id": "ina-cbg-2021:p13:394-1157:ade9f2106402"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 14,
+              "chunk_id": "ina-cbg-2021:p14:0-678:4ecf0a43a292"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:1290-1630:83a2c2f3024e"
+            }
+          ]
+        },
+        {
+          "case_id": "D-009",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.25,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 19,
+              "chunk_id": "jkn-tariffs-2023:p19:935-1379:f7c44c6ec3af"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 26,
+              "chunk_id": "jkn-tariffs-2023:p26:0-695:2291288c9473"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:38-173:b430613111a5"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:519-1119:c675d4769a9b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 23,
+              "chunk_id": "jkn-tariffs-2023:p23:5-326:863d9827c192"
+            }
+          ]
+        },
+        {
+          "case_id": "D-010",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 2,
+              "chunk_id": "quality-2022:p2:590-1133:9b0c1ca66bdf"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            }
+          ]
+        },
+        {
+          "case_id": "D-011",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 4,
+              "chunk_id": "quality-2022:p4:572-1305:f869cddbda09"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 53,
+              "chunk_id": "ina-cbg-2021:p53:552-1204:ad12ced24913"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            }
+          ]
+        },
+        {
+          "case_id": "D-012",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 4,
+              "chunk_id": "quality-2022:p4:0-710:b42ace19a673"
+            }
+          ]
+        },
+        {
+          "case_id": "D-013",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 1,
+              "chunk_id": "accreditation-2022:p1:0-820:e870a1c39036"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 12,
+              "chunk_id": "accreditation-2022:p12:118-552:17955bccc0db"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 4,
+              "chunk_id": "accreditation-2022:p4:1160-1497:8070a837bfa3"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:0-55:98d65980bf6e"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            }
+          ]
+        },
+        {
+          "case_id": "D-014",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:0-115:ce6a3cf35dcc"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 4,
+              "chunk_id": "accreditation-2022:p4:1498-1709:9af0ddc3cdc9"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 6,
+              "chunk_id": "accreditation-2022:p6:1152-1391:dc0594e65944"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 12,
+              "chunk_id": "accreditation-2022:p12:118-552:17955bccc0db"
+            }
+          ]
+        },
+        {
+          "case_id": "D-015",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:56-865:dacb6bd9be2d"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:1301-1793:8c25bd08c16d"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 6,
+              "chunk_id": "accreditation-2022:p6:497-1321:23e889e31cd3"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 11,
+              "chunk_id": "accreditation-2022:p11:1867-2247:6119c014a02a"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 12,
+              "chunk_id": "accreditation-2022:p12:1929-2035:cf8a5cc20620"
+            }
+          ]
+        }
+      ]
+    },
+    "langchain": {
+      "recall_at_5": 0.6333,
+      "mrr_at_5": 0.4189,
+      "citation_source_hit_rate_at_5": 1,
+      "p50_ms": 14.62,
+      "p95_ms": 16.16,
+      "numeric_payload_bytes": 1354752,
+      "cases": [
+        {
+          "case_id": "D-001",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.25,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:0-439:20385ecefc42"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:0-794:44c2c0e7c145"
+            }
+          ]
+        },
+        {
+          "case_id": "D-002",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:0-794:44c2c0e7c145"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:4-318:df1bfbe28fa7"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:1258-1495:5d9f8b077431"
+            }
+          ]
+        },
+        {
+          "case_id": "D-003",
+          "page_recall": 0.5,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:440-736:08a38bcf926b"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:642-1411:3822e0497049"
+            }
+          ]
+        },
+        {
+          "case_id": "D-004",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:533-1139:03e2226d1991"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 49,
+              "chunk_id": "ina-cbg-2021:p49:1086-1385:7f13f66d4eb2"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 49,
+              "chunk_id": "ina-cbg-2021:p49:0-680:ca7c17c10bea"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:1017-1264:f21ae2307ed7"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 2,
+              "chunk_id": "quality-2022:p2:590-1133:9b0c1ca66bdf"
+            }
+          ]
+        },
+        {
+          "case_id": "D-005",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 28,
+              "chunk_id": "jkn-tariffs-2023:p28:601-1353:2fb74a44eeb8"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:0-716:b237dd3c1c65"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:658-1448:d93671b6a845"
+            }
+          ]
+        },
+        {
+          "case_id": "D-006",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:552-1346:45b721136697"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 29,
+              "chunk_id": "jkn-tariffs-2023:p29:0-731:d17719ee298d"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            }
+          ]
+        },
+        {
+          "case_id": "D-007",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 21,
+              "chunk_id": "ina-cbg-2021:p21:480-1155:1cc0d0b86bd5"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            }
+          ]
+        },
+        {
+          "case_id": "D-008",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:5-518:8c623d0932fe"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 13,
+              "chunk_id": "ina-cbg-2021:p13:394-1157:ade9f2106402"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 14,
+              "chunk_id": "ina-cbg-2021:p14:0-678:4ecf0a43a292"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 13,
+              "chunk_id": "ina-cbg-2021:p13:996-1392:3f3e239e90b1"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            }
+          ]
+        },
+        {
+          "case_id": "D-009",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:519-1119:c675d4769a9b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 23,
+              "chunk_id": "jkn-tariffs-2023:p23:5-326:863d9827c192"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 26,
+              "chunk_id": "jkn-tariffs-2023:p26:0-695:2291288c9473"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 21,
+              "chunk_id": "jkn-tariffs-2023:p21:768-1439:fca2dfa72fc9"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 19,
+              "chunk_id": "jkn-tariffs-2023:p19:935-1379:f7c44c6ec3af"
+            }
+          ]
+        },
+        {
+          "case_id": "D-010",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:0-55:98d65980bf6e"
+            }
+          ]
+        },
+        {
+          "case_id": "D-011",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.2,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 52,
+              "chunk_id": "ina-cbg-2021:p52:461-1050:f419c0457198"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 2,
+              "chunk_id": "quality-2022:p2:590-1133:9b0c1ca66bdf"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 4,
+              "chunk_id": "quality-2022:p4:0-710:b42ace19a673"
+            }
+          ]
+        },
+        {
+          "case_id": "D-012",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            }
+          ]
+        },
+        {
+          "case_id": "D-013",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 1,
+              "chunk_id": "accreditation-2022:p1:0-820:e870a1c39036"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 15,
+              "chunk_id": "accreditation-2022:p15:45-782:d38e332ebd74"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 15,
+              "chunk_id": "accreditation-2022:p15:1213-1916:e04db6a422e0"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 3,
+              "chunk_id": "accreditation-2022:p3:0-817:67cf13297ead"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            }
+          ]
+        },
+        {
+          "case_id": "D-014",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 3,
+              "chunk_id": "accreditation-2022:p3:0-817:67cf13297ead"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:1784-2419:0ef7d1911b17"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:937-1691:22a61139d2f6"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:116-904:7e7f25e3d0cc"
+            }
+          ]
+        },
+        {
+          "case_id": "D-015",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:56-865:dacb6bd9be2d"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:1537-2279:96f098d0206a"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 4,
+              "chunk_id": "accreditation-2022:p4:1710-2000:9996d6b4658e"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 11,
+              "chunk_id": "accreditation-2022:p11:1867-2247:6119c014a02a"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:866-1692:f6cf676cb2ff"
+            }
+          ]
+        }
+      ]
+    },
+    "llamaindex": {
+      "recall_at_5": 0.6333,
+      "mrr_at_5": 0.4189,
+      "citation_source_hit_rate_at_5": 1,
+      "p50_ms": 14.93,
+      "p95_ms": 15.87,
+      "numeric_payload_bytes": 1354752,
+      "cases": [
+        {
+          "case_id": "D-001",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.25,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:0-439:20385ecefc42"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:0-794:44c2c0e7c145"
+            }
+          ]
+        },
+        {
+          "case_id": "D-002",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:0-794:44c2c0e7c145"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2016:p3:4-318:df1bfbe28fa7"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:1258-1495:5d9f8b077431"
+            }
+          ]
+        },
+        {
+          "case_id": "D-003",
+          "page_recall": 0.5,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 7,
+              "chunk_id": "ina-cbg-2021:p7:0-775:f79650ef3c99"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 4,
+              "chunk_id": "ina-cbg-2021:p4:440-736:08a38bcf926b"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 1,
+              "chunk_id": "ina-cbg-2021:p1:0-771:3f70ecc744b0"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 6,
+              "chunk_id": "ina-cbg-2021:p6:642-1411:3822e0497049"
+            }
+          ]
+        },
+        {
+          "case_id": "D-004",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:533-1139:03e2226d1991"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 49,
+              "chunk_id": "ina-cbg-2021:p49:1086-1385:7f13f66d4eb2"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 49,
+              "chunk_id": "ina-cbg-2021:p49:0-680:ca7c17c10bea"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 50,
+              "chunk_id": "ina-cbg-2021:p50:1017-1264:f21ae2307ed7"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 2,
+              "chunk_id": "quality-2022:p2:590-1133:9b0c1ca66bdf"
+            }
+          ]
+        },
+        {
+          "case_id": "D-005",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 28,
+              "chunk_id": "jkn-tariffs-2023:p28:601-1353:2fb74a44eeb8"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:0-716:b237dd3c1c65"
+            },
+            {
+              "source_id": "ina-cbg-2016",
+              "pdf_page": 5,
+              "chunk_id": "ina-cbg-2016:p5:658-1448:d93671b6a845"
+            }
+          ]
+        },
+        {
+          "case_id": "D-006",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 1,
+              "chunk_id": "jkn-tariffs-2023:p1:552-1346:45b721136697"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 29,
+              "chunk_id": "jkn-tariffs-2023:p29:0-731:d17719ee298d"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            }
+          ]
+        },
+        {
+          "case_id": "D-007",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:930-1722:42de3cfae18b"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 21,
+              "chunk_id": "ina-cbg-2021:p21:480-1155:1cc0d0b86bd5"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 3,
+              "chunk_id": "ina-cbg-2021:p3:0-641:849cf5fd2be1"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 3,
+              "chunk_id": "jkn-tariffs-2023:p3:333-1093:ced52668b01d"
+            }
+          ]
+        },
+        {
+          "case_id": "D-008",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:5-518:8c623d0932fe"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 13,
+              "chunk_id": "ina-cbg-2021:p13:394-1157:ade9f2106402"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 14,
+              "chunk_id": "ina-cbg-2021:p14:0-678:4ecf0a43a292"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 13,
+              "chunk_id": "ina-cbg-2021:p13:996-1392:3f3e239e90b1"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 20,
+              "chunk_id": "jkn-tariffs-2023:p20:1120-1576:fba1c7f42913"
+            }
+          ]
+        },
+        {
+          "case_id": "D-009",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 18,
+              "chunk_id": "jkn-tariffs-2023:p18:519-1119:c675d4769a9b"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 23,
+              "chunk_id": "jkn-tariffs-2023:p23:5-326:863d9827c192"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 26,
+              "chunk_id": "jkn-tariffs-2023:p26:0-695:2291288c9473"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 21,
+              "chunk_id": "jkn-tariffs-2023:p21:768-1439:fca2dfa72fc9"
+            },
+            {
+              "source_id": "jkn-tariffs-2023",
+              "pdf_page": 19,
+              "chunk_id": "jkn-tariffs-2023:p19:935-1379:f7c44c6ec3af"
+            }
+          ]
+        },
+        {
+          "case_id": "D-010",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:0-55:98d65980bf6e"
+            }
+          ]
+        },
+        {
+          "case_id": "D-011",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.2,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "ina-cbg-2021",
+              "pdf_page": 52,
+              "chunk_id": "ina-cbg-2021:p52:461-1050:f419c0457198"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 2,
+              "chunk_id": "quality-2022:p2:590-1133:9b0c1ca66bdf"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 4,
+              "chunk_id": "quality-2022:p4:0-710:b42ace19a673"
+            }
+          ]
+        },
+        {
+          "case_id": "D-012",
+          "page_recall": 1.0,
+          "reciprocal_rank": 0.5,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 6,
+              "chunk_id": "quality-2022:p6:0-690:8890ab51b895"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:0-390:f6d4d8f1701a"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 1,
+              "chunk_id": "quality-2022:p1:0-746:f020c7c83905"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "quality-2022",
+              "pdf_page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            }
+          ]
+        },
+        {
+          "case_id": "D-013",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 1,
+              "chunk_id": "accreditation-2022:p1:0-820:e870a1c39036"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 15,
+              "chunk_id": "accreditation-2022:p15:45-782:d38e332ebd74"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 15,
+              "chunk_id": "accreditation-2022:p15:1213-1916:e04db6a422e0"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 3,
+              "chunk_id": "accreditation-2022:p3:0-817:67cf13297ead"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            }
+          ]
+        },
+        {
+          "case_id": "D-014",
+          "page_recall": 0.0,
+          "reciprocal_rank": 0.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 3,
+              "chunk_id": "accreditation-2022:p3:0-817:67cf13297ead"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 14,
+              "chunk_id": "accreditation-2022:p14:0-642:76e0ec3f4b65"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:1784-2419:0ef7d1911b17"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:937-1691:22a61139d2f6"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 10,
+              "chunk_id": "accreditation-2022:p10:116-904:7e7f25e3d0cc"
+            }
+          ]
+        },
+        {
+          "case_id": "D-015",
+          "page_recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "source_hit": true,
+          "hits": [
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:56-865:dacb6bd9be2d"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:1537-2279:96f098d0206a"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 4,
+              "chunk_id": "accreditation-2022:p4:1710-2000:9996d6b4658e"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 11,
+              "chunk_id": "accreditation-2022:p11:1867-2247:6119c014a02a"
+            },
+            {
+              "source_id": "accreditation-2022",
+              "pdf_page": 5,
+              "chunk_id": "accreditation-2022:p5:866-1692:f6cf676cb2ff"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "embedding": {
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "weights_sha256": "1a55775f53449dac10a2bcbc312469fac40b96d53198c407081a831f81c98477"
+  }
+}

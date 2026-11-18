@@ -30,6 +30,10 @@ The Python helpers check basic payload structure. The JSON Schemas define the fu
 
 See the [corpus and evaluation guide](docs/corpus.md) for pinned sources, the extraction audit, and synthetic claim fixtures.
 
+## Retrieval
+
+The [retrieval guide](docs/retrieval.md) covers local passage search, evidence packets, and the development benchmark.
+
 ## Planned runtime
 
 - Python 3.12
