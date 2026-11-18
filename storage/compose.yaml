@@ -1,0 +1,77 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16@sha256:0dd3149a06e4579a0d70d8fef9945636cd514005e7237deb27f9b67886f8dc4f
+    environment:
+      POSTGRES_DB: careops_lab
+      POSTGRES_USER: careops
+      POSTGRES_PASSWORD: careops-demo
+    ports: ["127.0.0.1:55432:5432"]
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "careops", "-d", "careops_lab"]
+      interval: 2s
+      timeout: 4s
+      retries: 45
+
+  mysql:
+    image: mysql:8.4@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902
+    environment:
+      MYSQL_DATABASE: careops_lab
+      MYSQL_USER: careops
+      MYSQL_PASSWORD: careops-demo
+      MYSQL_ROOT_PASSWORD: careops-root-demo
+    ports: ["127.0.0.1:53306:3306"]
+    volumes: [mysql_data:/var/lib/mysql]
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$${MYSQL_PASSWORD} mysql -h 127.0.0.1 -u careops careops_lab -e 'SELECT 1'"]
+      interval: 2s
+      timeout: 4s
+      retries: 60
+
+  mongo:
+    image: mongo:8.0@sha256:bdc216e9d5a6ec2cfdac789b5832fdab64cd32055f59885cae918a92de63c361
+    ports: ["127.0.0.1:57017:27017"]
+    volumes: [mongo_data:/data/db]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "if (!db.adminCommand({ping: 1}).ok) quit(1)"]
+      interval: 2s
+      timeout: 5s
+      retries: 45
+
+  redis:
+    image: redis:8.2.3-alpine@sha256:08ad0b1d280850169a790dba1393ff7a90aef951fc19632cf4d3ce4f78e679ba
+    command: ["redis-server", "--appendonly", "yes"]
+    ports: ["127.0.0.1:56379:6379"]
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 4s
+      retries: 45
+
+  qdrant:
+    image: qdrant/qdrant:v1.17.1@sha256:94728574965d17c6485dd361aa3c0818b325b9016dac5ea6afec7b4b2700865f
+    environment:
+      QDRANT__TELEMETRY_DISABLED: "true"
+    ports: ["127.0.0.1:56333:6333"]
+    volumes: [qdrant_data:/qdrant/storage]
+
+  weaviate:
+    image: semitechnologies/weaviate:1.35.13@sha256:54e2745f53613c4b6bc2700f992973480d2ceddca87181ec67b70d1f26ea48cc
+    environment:
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      AUTOSCHEMA_ENABLED: "false"
+      CLUSTER_HOSTNAME: careops-lab
+      DEFAULT_VECTORIZER_MODULE: none
+      DISABLE_TELEMETRY: "true"
+      PERSISTENCE_DATA_PATH: /var/lib/weaviate
+    ports: ["127.0.0.1:58080:8080"]
+    volumes: [weaviate_data:/var/lib/weaviate]
+
+volumes:
+  postgres_data:
+  mysql_data:
+  mongo_data:
+  redis_data:
+  qdrant_data:
+  weaviate_data:

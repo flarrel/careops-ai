@@ -22,6 +22,8 @@ The [local application guide](docs/application.md) starts FastAPI, the Streamlit
 
 The [integration guide](docs/integrations.md) covers spreadsheet intake, local API consumers, and offline healthcare contracts.
 
+The [storage comparison](docs/storage.md) checks synthetic claim persistence and source-filtered vector search against local database engines.
+
 ## Foundation status
 
 The foundation defines the contracts, data policy, threat model, and reduced dependency profile. Run the dependency-free contract tests from the repository root with Python 3.12.
