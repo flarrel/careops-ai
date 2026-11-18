@@ -46,6 +46,8 @@ The [review agent guide](docs/review-agent.md) covers human approval, synthetic 
 
 The [synthetic fixture model lab](docs/model-lab.md) covers data mining, clustering, workload forecasting, and document-vision experiments using four local ML stacks.
 
+The [FLAN-T5 fine-tuning lab](docs/finetune.md) compares prompt-only and fine-tuned routing on held-out synthetic claims.
+
 ## Planned runtime
 
 - Python 3.12

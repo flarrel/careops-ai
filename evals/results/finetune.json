@@ -1,0 +1,979 @@
+{
+  "scope": "synthetic development claim routing",
+  "base": {
+    "repository": "google/flan-t5-small",
+    "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+    "weights_sha256": "495fa51e204676f1a857a9fc13c4c89f3f5ba9f480b898cebca02add25e6d749"
+  },
+  "input_sha256": "87736b345f3f0a6abca2a90e7934abbd47ed214d60915f9ce75892462a4534ca",
+  "environment": {
+    "os": "macOS-14.3-arm64-arm-64bit",
+    "python": "3.12.4",
+    "device": "cpu",
+    "torch_threads": 4,
+    "versions": {
+      "torch": "2.14.1",
+      "transformers": "4.47.1",
+      "tokenizers": "0.21.4",
+      "safetensors": "0.8.0",
+      "numpy": "2.5.4",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "protocol": {
+    "prompt_version": "claim-routing-v1",
+    "prompt_sha256": "6ad97c4458eb4d1a34a82e56c80cd8bf9bd895db2c043f83f3766078b28f9b5d",
+    "train_seed": 1808,
+    "epochs": 8,
+    "batch": 8,
+    "learning_rate": 0.0006,
+    "input_tokens": 128,
+    "max_new_tokens": 12,
+    "selection": "highest validation macro F1, earliest epoch on ties",
+    "holdout_prompt_forms": [
+      "record",
+      "paraphrase"
+    ],
+    "closed_label_diagnostic": "maximum mean log probability over label tokens and EOS",
+    "labels": [
+      "review clear",
+      "escalate invoice",
+      "escalate code",
+      "escalate amount"
+    ]
+  },
+  "splits": {
+    "train": {
+      "claims": [
+        "SYN-D-001",
+        "SYN-D-002",
+        "SYN-D-004",
+        "SYN-D-006",
+        "SYN-D-007",
+        "SYN-D-008",
+        "SYN-D-011",
+        "SYN-D-012",
+        "SYN-D-013",
+        "SYN-D-016",
+        "SYN-D-018",
+        "SYN-D-019"
+      ],
+      "examples": 144,
+      "sha256": "7fe652c8797a4f7550b410d0fea2922a02f4af03cde2155617083d7e2dbb4677"
+    },
+    "validation": {
+      "claims": [
+        "SYN-D-005",
+        "SYN-D-009",
+        "SYN-D-015",
+        "SYN-D-017"
+      ],
+      "examples": 48,
+      "sha256": "2c82469cc3f52af1bf41865a36cc730b7cabdb572a4e460e4a6c9f054485887d"
+    },
+    "holdout": {
+      "claims": [
+        "SYN-D-003",
+        "SYN-D-010",
+        "SYN-D-014",
+        "SYN-D-020"
+      ],
+      "examples": 48,
+      "sha256": "0f2d9bbdaa0314dc9ad09b78bf22dd1bc09060dded45606fca16d8ea1f4e55ab"
+    }
+  },
+  "tokenization": {
+    "class": "T5TokenizerFast",
+    "embedding_shape": [
+      32128,
+      512
+    ],
+    "label_token_ids": {
+      "review clear": [
+        1132,
+        964,
+        1
+      ],
+      "escalate invoice": [
+        30254,
+        10921,
+        1
+      ],
+      "escalate code": [
+        30254,
+        1081,
+        1
+      ],
+      "escalate amount": [
+        30254,
+        866,
+        1
+      ]
+    }
+  },
+  "training": {
+    "history": [
+      {
+        "epoch": 1,
+        "mean_train_loss": 2.610137,
+        "validation_macro_f1": 0.1,
+        "validation_exact_match": 0.25
+      },
+      {
+        "epoch": 2,
+        "mean_train_loss": 1.253058,
+        "validation_macro_f1": 0.108766,
+        "validation_exact_match": 0.1875
+      },
+      {
+        "epoch": 3,
+        "mean_train_loss": 0.93259,
+        "validation_macro_f1": 0.115385,
+        "validation_exact_match": 0.1875
+      },
+      {
+        "epoch": 4,
+        "mean_train_loss": 0.832216,
+        "validation_macro_f1": 0.1,
+        "validation_exact_match": 0.25
+      },
+      {
+        "epoch": 5,
+        "mean_train_loss": 0.712782,
+        "validation_macro_f1": 0.1,
+        "validation_exact_match": 0.25
+      },
+      {
+        "epoch": 6,
+        "mean_train_loss": 0.638787,
+        "validation_macro_f1": 0.375,
+        "validation_exact_match": 0.5
+      },
+      {
+        "epoch": 7,
+        "mean_train_loss": 0.607622,
+        "validation_macro_f1": 0.1,
+        "validation_exact_match": 0.25
+      },
+      {
+        "epoch": 8,
+        "mean_train_loss": 0.589573,
+        "validation_macro_f1": 0.375,
+        "validation_exact_match": 0.5
+      }
+    ],
+    "selected_epoch": 6,
+    "trained_parameters": 3147776,
+    "total_parameters": 76961152,
+    "changed_parameter_tensors": 15,
+    "adapter_sha256": "8308e870be313ef1e6d9ba3823d21ff3989b3b375f59891ee04a06672b23e6cb"
+  },
+  "holdout_ids": [
+    "SYN-D-014:0:0",
+    "SYN-D-014:0:1",
+    "SYN-D-014:0:2",
+    "SYN-D-014:0:3",
+    "SYN-D-014:1:0",
+    "SYN-D-014:1:1",
+    "SYN-D-014:1:2",
+    "SYN-D-014:1:3",
+    "SYN-D-014:2:0",
+    "SYN-D-014:2:1",
+    "SYN-D-014:2:2",
+    "SYN-D-014:2:3",
+    "SYN-D-010:0:0",
+    "SYN-D-010:0:1",
+    "SYN-D-010:0:2",
+    "SYN-D-010:0:3",
+    "SYN-D-010:1:0",
+    "SYN-D-010:1:1",
+    "SYN-D-010:1:2",
+    "SYN-D-010:1:3",
+    "SYN-D-010:2:0",
+    "SYN-D-010:2:1",
+    "SYN-D-010:2:2",
+    "SYN-D-010:2:3",
+    "SYN-D-020:0:0",
+    "SYN-D-020:0:1",
+    "SYN-D-020:0:2",
+    "SYN-D-020:0:3",
+    "SYN-D-020:1:0",
+    "SYN-D-020:1:1",
+    "SYN-D-020:1:2",
+    "SYN-D-020:1:3",
+    "SYN-D-020:2:0",
+    "SYN-D-020:2:1",
+    "SYN-D-020:2:2",
+    "SYN-D-020:2:3",
+    "SYN-D-003:0:0",
+    "SYN-D-003:0:1",
+    "SYN-D-003:0:2",
+    "SYN-D-003:0:3",
+    "SYN-D-003:1:0",
+    "SYN-D-003:1:1",
+    "SYN-D-003:1:2",
+    "SYN-D-003:1:3",
+    "SYN-D-003:2:0",
+    "SYN-D-003:2:1",
+    "SYN-D-003:2:2",
+    "SYN-D-003:2:3"
+  ],
+  "holdout_labels": [
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount",
+    "review clear",
+    "escalate invoice",
+    "escalate code",
+    "escalate amount"
+  ],
+  "prompt_only": {
+    "record": {
+      "metrics": {
+        "n": 48,
+        "exact_match": 0.0,
+        "macro_f1": 0.0,
+        "invalid_outputs": 48,
+        "confusion_with_invalid_column": [
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ]
+        ]
+      },
+      "outputs": [
+        "x187",
+        "x187",
+        "x187",
+        "excellent",
+        "expense",
+        "x414.",
+        "excellent",
+        "x414.",
+        "excellent",
+        "excellent",
+        "excellent",
+        "x495.",
+        "expense",
+        "expense",
+        "expense",
+        "x753",
+        "excellent",
+        "x610.",
+        "excellent",
+        "excellent",
+        "x912.",
+        "x912.",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "x839.",
+        "x839.",
+        "x876",
+        "x839.",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "208138",
+        "x702",
+        "expense",
+        "expense",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent",
+        "excellent"
+      ],
+      "closed_label_diagnostic": {
+        "metrics": {
+          "n": 48,
+          "exact_match": 0.25,
+          "macro_f1": 0.1,
+          "invalid_outputs": 0,
+          "confusion_with_invalid_column": [
+            [
+              0,
+              0,
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              12,
+              0
+            ]
+          ]
+        },
+        "outputs": [
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount",
+          "escalate amount"
+        ]
+      }
+    },
+    "paraphrase": {
+      "metrics": {
+        "n": 48,
+        "exact_match": 0.0,
+        "macro_f1": 0.0,
+        "invalid_outputs": 48,
+        "confusion_with_invalid_column": [
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            12
+          ]
+        ]
+      },
+      "outputs": [
+        "x187",
+        "x187",
+        "x187",
+        "x187",
+        "x414",
+        "x414",
+        "x451",
+        "x414",
+        "x495",
+        "x495",
+        "x532",
+        "x495",
+        "x753",
+        "x753",
+        "x790",
+        "x753",
+        "x610",
+        "x610",
+        "x647",
+        "x610",
+        "x912",
+        "x912",
+        "x949",
+        "x912",
+        "x892",
+        "x892",
+        "x892",
+        "x892",
+        "x839",
+        "x839",
+        "x876",
+        "x839",
+        "x533",
+        "x533",
+        "x570",
+        "x533",
+        "x702",
+        "x702",
+        "x739",
+        "x702",
+        "x353",
+        "x353",
+        "x390",
+        "x353",
+        "x578",
+        "x578",
+        "x578",
+        "x578"
+      ],
+      "closed_label_diagnostic": {
+        "metrics": {
+          "n": 48,
+          "exact_match": 0.25,
+          "macro_f1": 0.1,
+          "invalid_outputs": 0,
+          "confusion_with_invalid_column": [
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "outputs": [
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice"
+        ]
+      }
+    }
+  },
+  "fine_tuned": {
+    "record": {
+      "metrics": {
+        "n": 48,
+        "exact_match": 0.5,
+        "macro_f1": 0.375,
+        "invalid_outputs": 0,
+        "confusion_with_invalid_column": [
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ]
+        ]
+      },
+      "outputs": [
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code",
+        "escalate code",
+        "escalate invoice",
+        "escalate code",
+        "escalate code"
+      ],
+      "closed_label_diagnostic": {
+        "metrics": {
+          "n": 48,
+          "exact_match": 0.5,
+          "macro_f1": 0.37766,
+          "invalid_outputs": 0,
+          "confusion_with_invalid_column": [
+            [
+              0,
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              11,
+              0,
+              0
+            ]
+          ]
+        },
+        "outputs": [
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "review clear",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code",
+          "escalate code",
+          "escalate invoice",
+          "escalate code",
+          "escalate code"
+        ]
+      }
+    },
+    "paraphrase": {
+      "metrics": {
+        "n": 48,
+        "exact_match": 0.25,
+        "macro_f1": 0.1,
+        "invalid_outputs": 0,
+        "confusion_with_invalid_column": [
+          [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "outputs": [
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice",
+        "escalate invoice"
+      ],
+      "closed_label_diagnostic": {
+        "metrics": {
+          "n": 48,
+          "exact_match": 0.25,
+          "macro_f1": 0.1,
+          "invalid_outputs": 0,
+          "confusion_with_invalid_column": [
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "outputs": [
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice",
+          "escalate invoice"
+        ]
+      }
+    }
+  }
+}
