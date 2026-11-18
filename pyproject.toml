@@ -10,6 +10,7 @@ requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [project.optional-dependencies]
+app = ["streamlit==1.55.0", "httpx==0.28.1"]
 finetune = [
   "numpy==2.5.4",
   "pillow==12.3.0",
@@ -63,7 +64,7 @@ reduced = [
   "fastapi==0.115.6",
   "pydantic==2.10.5",
   "scikit-learn==1.6.1",
-  "streamlit==1.41.1",
+  "streamlit==1.55.0",
   "uvicorn==0.34.0",
 ]
 full = [

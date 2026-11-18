@@ -2,6 +2,7 @@ import importlib.util
 import json
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 from careops.answer import PolicyAnswerer, abstain, prompt_data
@@ -101,7 +102,9 @@ class ApiTests(unittest.TestCase):
         from careops.api import create_app
 
         service = PolicyAnswerer(FixedIndex([HIT]), FixedGenerator("A", "yes"), [SOURCE])
-        with TestClient(create_app(lambda: service)) as client:
+        with TemporaryDirectory() as directory, TestClient(
+            create_app(lambda: service, history_path=Path(directory) / "runs.sqlite3")
+        ) as client:
             response = client.post("/answer", json={"query": f" {QUERY} "})
             self.assertEqual(response.status_code, 200)
             self.assertEqual(response.json()["answer"], TEXT)
@@ -116,7 +119,9 @@ class ApiTests(unittest.TestCase):
             def answer(self, query):
                 raise RuntimeError("private detail")
 
-        with TestClient(create_app(Broken)) as client:
+        with TemporaryDirectory() as directory, TestClient(
+            create_app(Broken, history_path=Path(directory) / "runs.sqlite3")
+        ) as client:
             response = client.post("/answer", json={"query": QUERY})
             self.assertEqual(response.status_code, 503)
             self.assertEqual(response.json(), {"detail": "Policy answer service unavailable"})

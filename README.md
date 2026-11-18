@@ -16,6 +16,10 @@ source files + synthetic claims -> ingestion -> retrieval -> evidence packet
 
 The project will use public, provenance-recorded policy material and project-owned synthetic records. It is not medical advice, a clinical decision system, a live claims processor, or a substitute for professional review.
 
+## Run the application
+
+The [local application guide](docs/application.md) starts FastAPI, the Streamlit admin, and the Next.js client for policy and synthetic claim review.
+
 ## Foundation status
 
 The foundation defines the contracts, data policy, threat model, and reduced dependency profile. Run the dependency-free contract tests from the repository root with Python 3.12.

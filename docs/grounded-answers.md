@@ -24,7 +24,7 @@ curl -sS http://127.0.0.1:8000/answer \
   -d '{"query":"Siapa pengguna pedoman INA-CBG untuk metode pembayaran klaim menurut Permenkes 26/2021?"}'
 ```
 
-`POST /answer` accepts a question of 1–500 characters. It returns an `answer` or `abstain` status. Cited answers include the document title, URL, passage ID, and page range. An abstention includes an Indonesian message, a reason code, and an empty citation list. The server loads the corpus and model once at startup. Inference uses the local model files after the explicit fetch.
+`POST /answer` accepts a question of 1–500 characters. It returns an `answer` or `abstain` status. Cited answers include the document title, URL, passage ID, and page range. An abstention includes an Indonesian message, a reason code, and an empty citation list. The server loads the corpus and model on the first policy request and reuses them. Inference uses the local model files after the explicit fetch.
 
 ## Development evaluation
 
