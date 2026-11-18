@@ -6,12 +6,15 @@
   "required": ["run_id", "stage", "started_at", "duration_ms", "outcome"],
   "properties": {
     "run_id": {"type": "string", "minLength": 1},
-    "stage": {"enum": ["ingest", "retrieve", "answer", "tool", "api"]},
+    "stage": {"enum": ["ingest", "retrieve", "answer", "tool", "api", "approval", "agent"]},
     "started_at": {"type": "string", "minLength": 1},
     "duration_ms": {"type": "number", "minimum": 0},
-    "outcome": {"enum": ["ok", "error", "abstain", "escalate"]},
+    "outcome": {"enum": ["ok", "error", "abstain", "escalate", "pending"]},
     "error_code": {"type": "string"},
-    "redacted_input_hash": {"type": "string"}
+    "redacted_input_hash": {"type": "string"},
+    "tool_name": {"enum": ["lookup_synthetic_claim", "lookup_policy"]},
+    "attempt": {"type": "integer", "minimum": 1},
+    "citation_ids": {"type": "array", "items": {"type": "string"}}
   },
   "additionalProperties": false
 }

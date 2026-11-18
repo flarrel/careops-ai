@@ -1,0 +1,7 @@
+{
+  "D-021": {"kind": "claim", "claim_id": "SYN-D-003"},
+  "D-022": {"kind": "claim", "claim_id": "SYN-D-007"},
+  "D-023": {"kind": "claim", "claim_id": "SYN-D-013", "max_amount_idr": 1800000},
+  "D-024": {"kind": "claim", "claim_id": "SYN-D-018"},
+  "D-025": {"kind": "claim", "claim_id": "SYN-D-999"}
+}

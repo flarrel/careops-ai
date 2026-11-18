@@ -1,0 +1,180 @@
+{
+  "split": "development",
+  "inputs": {
+    "evals/development.jsonl": "1b6792ae755f928b045207499d4d3b2add981a4f2f4020229a903b0e175a6a25",
+    "data/samples/claims-development.jsonl": "87736b345f3f0a6abca2a90e7934abbd47ed214d60915f9ce75892462a4534ca",
+    "evals/agent-development.json": "23836bb60bbe746f67615328a187b66724790bcccb7ca5507f87ea084c071485",
+    "data/manifests/generation.json": "4650582f5f5f9b46351920c0091ef54d39fd8229cfd3a85fc6eb587cacd362bc"
+  },
+  "environment": {
+    "os": "macOS-14.3-arm64-arm-64bit",
+    "python": "3.12.4",
+    "langgraph": "0.2.60",
+    "langchain-core": "0.3.29"
+  },
+  "metrics": {
+    "workflow_task_success": 1.0,
+    "direct_task_success": 0.0,
+    "direct_status_matches": 1,
+    "result_schema_validity": 1.0,
+    "trace_events_validated": 55,
+    "failure_and_boundary_probes_passed": 11,
+    "unauthorized_tool_calls": 0,
+    "tool_attempts_by_name": {
+      "lookup_synthetic_claim": 12,
+      "lookup_policy": 6
+    },
+    "workflow_claim_p50_ms": 15.64
+  },
+  "cases": [
+    {
+      "case_id": "D-021",
+      "expected_status": "escalate",
+      "status": "escalate",
+      "matched_status_and_fields": true,
+      "tool_calls": [
+        "lookup_synthetic_claim"
+      ],
+      "direct_status": "abstain",
+      "direct_matched_full_task": false
+    },
+    {
+      "case_id": "D-022",
+      "expected_status": "escalate",
+      "status": "escalate",
+      "matched_status_and_fields": true,
+      "tool_calls": [
+        "lookup_synthetic_claim"
+      ],
+      "direct_status": "abstain",
+      "direct_matched_full_task": false
+    },
+    {
+      "case_id": "D-023",
+      "expected_status": "escalate",
+      "status": "escalate",
+      "matched_status_and_fields": true,
+      "tool_calls": [
+        "lookup_synthetic_claim"
+      ],
+      "direct_status": "abstain",
+      "direct_matched_full_task": false
+    },
+    {
+      "case_id": "D-024",
+      "expected_status": "review",
+      "status": "review",
+      "matched_status_and_fields": true,
+      "tool_calls": [
+        "lookup_synthetic_claim"
+      ],
+      "direct_status": "abstain",
+      "direct_matched_full_task": false
+    },
+    {
+      "case_id": "D-025",
+      "expected_status": "abstain",
+      "status": "abstain",
+      "matched_status_and_fields": true,
+      "tool_calls": [
+        "lookup_synthetic_claim"
+      ],
+      "direct_status": "abstain",
+      "direct_matched_full_task": false
+    }
+  ],
+  "probes": [
+    {
+      "name": "denied",
+      "status": "abstain",
+      "reason": "approval_denied",
+      "tool_calls": [],
+      "passed": true
+    },
+    {
+      "name": "policy",
+      "status": "review",
+      "reason": "human_review_required",
+      "tool_calls": [
+        "lookup_policy"
+      ],
+      "passed": true
+    },
+    {
+      "name": "combined",
+      "status": "review",
+      "reason": "human_review_required",
+      "tool_calls": [
+        "lookup_synthetic_claim",
+        "lookup_policy"
+      ],
+      "passed": true
+    },
+    {
+      "name": "untrusted_input_D-019",
+      "status": "abstain",
+      "reason": "policy_evidence_missing",
+      "tool_calls": [
+        "lookup_policy"
+      ],
+      "passed": true
+    },
+    {
+      "name": "untrusted_input_D-020",
+      "status": "abstain",
+      "reason": "policy_evidence_missing",
+      "tool_calls": [
+        "lookup_policy"
+      ],
+      "passed": true
+    },
+    {
+      "name": "transient_claim_timeout",
+      "status": "review",
+      "reason": "human_review_required",
+      "tool_calls": [
+        "lookup_synthetic_claim",
+        "lookup_synthetic_claim"
+      ],
+      "passed": true
+    },
+    {
+      "name": "persistent_claim_timeout",
+      "status": "escalate",
+      "reason": "tool_timeout",
+      "tool_calls": [
+        "lookup_synthetic_claim",
+        "lookup_synthetic_claim"
+      ],
+      "passed": true
+    },
+    {
+      "name": "policy_timeout_after_claim",
+      "status": "escalate",
+      "reason": "tool_timeout",
+      "tool_calls": [
+        "lookup_synthetic_claim",
+        "lookup_policy",
+        "lookup_policy"
+      ],
+      "passed": true
+    },
+    {
+      "name": "budget_exhausted",
+      "status": "escalate",
+      "reason": "tool_budget_exhausted",
+      "tool_calls": [
+        "lookup_synthetic_claim"
+      ],
+      "passed": true
+    },
+    {
+      "name": "real_id_rejected",
+      "passed": true
+    },
+    {
+      "name": "unlisted_tool_rejected",
+      "passed": true
+    }
+  ]
+}

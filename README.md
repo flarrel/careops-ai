@@ -38,6 +38,10 @@ The [retrieval guide](docs/retrieval.md) covers local passage search, evidence p
 
 The [answer service guide](docs/grounded-answers.md) covers the local API, cited excerpts, abstention, and evaluation.
 
+## Review agent
+
+The [review agent guide](docs/review-agent.md) covers human approval, synthetic claim checks, policy lookup, and redacted traces.
+
 ## Planned runtime
 
 - Python 3.12
