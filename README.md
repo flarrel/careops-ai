@@ -26,6 +26,10 @@ PYTHONPATH=src python3 -B -m unittest discover -s tests -v
 
 The Python helpers check basic payload structure. The JSON Schemas define the full wire contracts.
 
+## Corpus
+
+See the [corpus and evaluation guide](docs/corpus.md) for pinned sources, the extraction audit, and synthetic claim fixtures.
+
 ## Planned runtime
 
 - Python 3.12

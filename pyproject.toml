@@ -10,6 +10,7 @@ requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [project.optional-dependencies]
+data = ["pypdf==7.1.1"]
 reduced = [
   "fastapi==0.115.6",
   "pydantic==2.10.5",

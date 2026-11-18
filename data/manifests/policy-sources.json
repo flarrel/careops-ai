@@ -1,0 +1,192 @@
+[
+  {
+    "source": {
+      "source_id": "ina-cbg-2021",
+      "title": "Permenkes 26/2021 — Pedoman Indonesian Case Base Groups (INA-CBG) dalam Pelaksanaan Jaminan Kesehatan",
+      "source_url": "https://jdih.djsn.go.id/assets/file/permenkes%20nomor%2026%20tahun%202021.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Permenkes 26/2021 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "0cf1f10c0ef12b44494b9073c1b21e6d36e2489a0225eafdd101686ba2160b74"
+    },
+    "catalog_url": "https://jdih.kemkes.go.id/documents/peraturan-menteri-kesehatan-nomor-26-tahun-2021",
+    "catalog_status": "Berlaku",
+    "family": "payment",
+    "case_split": "development",
+    "bytes": 380665,
+    "pdf_pages": 56,
+    "pages_in_scope": 56
+  },
+  {
+    "source": {
+      "source_id": "jkn-tariffs-2023",
+      "title": "Permenkes 3/2023 — Standar Tarif Pelayanan Kesehatan dalam Penyelenggaraan Program Jaminan Kesehatan",
+      "source_url": "https://jdih.kemkes.go.id/storage/documents/pdfs/2023permenkes0003.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Permenkes 3/2023 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "9ad3c8ce7e6de0de246c294267502712354e958e835b9030ca9234754f389ee7"
+    },
+    "catalog_url": "https://jdih.kemkes.go.id/documents/peraturan-menteri-kesehatan-nomor-3-tahun-2023",
+    "catalog_status": "Berlaku",
+    "family": "payment",
+    "case_split": "development",
+    "bytes": 20807809,
+    "pdf_pages": 721,
+    "pages_in_scope": 35
+  },
+  {
+    "source": {
+      "source_id": "ina-cbg-2016",
+      "title": "Permenkes 76/2016 — Pedoman Indonesian Case Base Groups (INA-CBG) dalam Pelaksanaan Jaminan Kesehatan Nasional",
+      "source_url": "https://jdih.kemkes.go.id/storage/documents/pdfs/2016permenkes076.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Permenkes 76/2016 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "1120396c859164f682b4d123c88e1574d629be5521bf00a0bebf17dff191009c"
+    },
+    "catalog_url": "https://jdih.kemkes.go.id/documents/peraturan-menteri-kesehatan-nomor-76-tahun-2016",
+    "catalog_status": "Tidak berlaku (dicabut oleh Permenkes 26/2021)",
+    "family": "payment",
+    "case_split": "development",
+    "bytes": 1262112,
+    "pdf_pages": 275,
+    "pages_in_scope": 6
+  },
+  {
+    "source": {
+      "source_id": "quality-2022",
+      "title": "Permenkes 30/2022 — Indikator Nasional Mutu Pelayanan Kesehatan",
+      "source_url": "https://peraturan.go.id/files/bn1054-2022.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Permenkes 30/2022 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "6a711ddce4751705acd23532833d29d2d7dded210efd374ce061ea0a518b7791"
+    },
+    "catalog_url": "https://peraturan.go.id/id/permenkes-no-30-tahun-2022",
+    "catalog_status": "Berlaku",
+    "family": "facility-quality",
+    "case_split": "development",
+    "bytes": 6631255,
+    "pdf_pages": 93,
+    "pages_in_scope": 93
+  },
+  {
+    "source": {
+      "source_id": "accreditation-2022",
+      "title": "Permenkes 34/2022 — Akreditasi Fasilitas Pelayanan Kesehatan dan Tempat Praktik Mandiri",
+      "source_url": "https://peraturan.go.id/files/bn1207-2022.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Permenkes 34/2022 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "29cd8e870f0a9d3ddabc70d82ee4141d89e7aab0caa87bde053e0542a3a190a3"
+    },
+    "catalog_url": "https://peraturan.go.id/id/permenkes-no-34-tahun-2022",
+    "catalog_status": "Berlaku",
+    "family": "facility-quality",
+    "case_split": "development",
+    "bytes": 210460,
+    "pdf_pages": 16,
+    "pages_in_scope": 16
+  },
+  {
+    "source": {
+      "source_id": "jkn-2018",
+      "title": "Perpres 82/2018 — Jaminan Kesehatan",
+      "source_url": "https://peraturan.go.id/files/ps82-2018.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Perpres 82/2018 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "31e1ae8a72cdf23c3790f96fb70e5ee95175360b17bc8517ab400eccf3a94937"
+    },
+    "catalog_url": "https://peraturan.go.id/id/perpres-no-82-tahun-2018",
+    "catalog_status": "Berlaku",
+    "family": "insurance-governance",
+    "case_split": "sealed",
+    "bytes": 610360,
+    "pdf_pages": 61,
+    "pages_in_scope": 61
+  },
+  {
+    "source": {
+      "source_id": "jkn-2019",
+      "title": "Perpres 75/2019 — Perubahan Pertama atas Perpres 82/2018 tentang Jaminan Kesehatan",
+      "source_url": "https://peraturan.go.id/files/ps75-2019.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Perpres 75/2019 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "509d64cfc2d419ddb07403246b61f2f7b46220e46b89c1b4cab4a7b758873b88"
+    },
+    "catalog_url": "https://peraturan.go.id/id/perpres-no-75-tahun-2019",
+    "catalog_status": "Berlaku",
+    "family": "insurance-governance",
+    "case_split": "sealed",
+    "bytes": 177631,
+    "pdf_pages": 7,
+    "pages_in_scope": 7
+  },
+  {
+    "source": {
+      "source_id": "jkn-2020",
+      "title": "Perpres 64/2020 — Perubahan Kedua atas Perpres 82/2018 tentang Jaminan Kesehatan",
+      "source_url": "https://peraturan.go.id/files/ps64-2020.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Perpres 64/2020 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "fa35ccd20e523660a832a6798f9f5b0bb6da865c3620278df13e04979abdcc9a"
+    },
+    "catalog_url": "https://peraturan.go.id/id/perpres-no-64-tahun-2020",
+    "catalog_status": "Berlaku",
+    "family": "insurance-governance",
+    "case_split": "sealed",
+    "bytes": 225228,
+    "pdf_pages": 14,
+    "pages_in_scope": 14
+  },
+  {
+    "source": {
+      "source_id": "jkn-2024",
+      "title": "Perpres 59/2024 — Perubahan Ketiga atas Perpres 82/2018 tentang Jaminan Kesehatan",
+      "source_url": "https://peraturan.go.id/files/perpres-no-59-tahun-2024.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Perpres 59/2024 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "2063435307ca083c6b1a4d0b676bd3d2982cfb064257c8005eeea05665f728b5"
+    },
+    "catalog_url": "https://peraturan.go.id/id/perpres-no-59-tahun-2024",
+    "catalog_status": "Berlaku",
+    "family": "insurance-governance",
+    "case_split": "sealed",
+    "bytes": 3394871,
+    "pdf_pages": 33,
+    "pages_in_scope": 33
+  },
+  {
+    "source": {
+      "source_id": "records-2022",
+      "title": "Permenkes 24/2022 — Rekam Medis",
+      "source_url": "https://peraturan.go.id/files/bn829-2022.pdf",
+      "retrieved_on": "2026-11-18",
+      "document_version": "Permenkes 24/2022 as issued",
+      "license_note": "Official public publication used as a local reference. Raw and extracted contents excluded from Git.",
+      "redistribution_allowed": false,
+      "sha256": "f4601e47561a22d4438cb0af89c934e773061ec4a693e63c0c5017beb79b1dcd"
+    },
+    "catalog_url": "https://peraturan.go.id/id/permenkes-no-24-tahun-2022",
+    "catalog_status": "Berlaku",
+    "family": "medical-records",
+    "case_split": "sealed",
+    "bytes": 790494,
+    "pdf_pages": 19,
+    "pages_in_scope": 19
+  }
+]

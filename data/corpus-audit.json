@@ -1,0 +1,271 @@
+{
+  "corpus": {
+    "documents": 10,
+    "bytes": 34490885,
+    "scoped_pages": 340,
+    "families": {
+      "payment": 3,
+      "facility-quality": 2,
+      "insurance-governance": 4,
+      "medical-records": 1
+    },
+    "extraction": [
+      {
+        "source_id": "ina-cbg-2021",
+        "pdf_pages": 56,
+        "pages_inspected": 56,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 448,
+          "median": 1332.0,
+          "max": 2319
+        }
+      },
+      {
+        "source_id": "jkn-tariffs-2023",
+        "pdf_pages": 721,
+        "pages_inspected": 35,
+        "empty_pages": [],
+        "short_pages": [
+          31
+        ],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 17,
+          "median": 1997,
+          "max": 8907
+        }
+      },
+      {
+        "source_id": "ina-cbg-2016",
+        "pdf_pages": 275,
+        "pages_inspected": 6,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 688,
+          "median": 1188.0,
+          "max": 1630
+        }
+      },
+      {
+        "source_id": "quality-2022",
+        "pdf_pages": 93,
+        "pages_inspected": 93,
+        "empty_pages": [],
+        "short_pages": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93
+        ],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 37,
+          "median": 38,
+          "max": 2326
+        }
+      },
+      {
+        "source_id": "accreditation-2022",
+        "pdf_pages": 16,
+        "pages_inspected": 16,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 402,
+          "median": 2130.0,
+          "max": 2664
+        }
+      },
+      {
+        "source_id": "jkn-2018",
+        "pdf_pages": 61,
+        "pages_inspected": 61,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 572,
+          "median": 1408,
+          "max": 1676
+        }
+      },
+      {
+        "source_id": "jkn-2019",
+        "pdf_pages": 7,
+        "pages_inspected": 7,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 668,
+          "median": 1253,
+          "max": 1488
+        }
+      },
+      {
+        "source_id": "jkn-2020",
+        "pdf_pages": 14,
+        "pages_inspected": 14,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 399,
+          "median": 1353.5,
+          "max": 1544
+        }
+      },
+      {
+        "source_id": "jkn-2024",
+        "pdf_pages": 33,
+        "pages_inspected": 33,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 542,
+          "median": 1458,
+          "max": 1810
+        }
+      },
+      {
+        "source_id": "records-2022",
+        "pdf_pages": 19,
+        "pages_inspected": 19,
+        "empty_pages": [],
+        "short_pages": [],
+        "duplicate_page_copies": 0,
+        "replacement_characters": 0,
+        "characters_per_page": {
+          "min": 879,
+          "median": 2145,
+          "max": 2311
+        }
+      }
+    ]
+  },
+  "development": {
+    "synthetic_claims": 20,
+    "amount_idr": {
+      "min": 160000,
+      "median": 249500.0,
+      "max": 2630000
+    },
+    "claim_templates": {
+      "missing-invoice": 5,
+      "code-mismatch": 5,
+      "above-fixture-cap": 5,
+      "complete-outpatient": 5
+    },
+    "cases_by_kind": {
+      "policy": 15,
+      "unanswerable": 3,
+      "injection": 2,
+      "tool": 5
+    },
+    "case_outcomes": {
+      "answer": 15,
+      "abstain": 6,
+      "escalate": 3,
+      "review": 1
+    }
+  }
+}
