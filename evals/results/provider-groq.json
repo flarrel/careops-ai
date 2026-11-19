@@ -1,0 +1,36 @@
+{
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "utc": "2026-11-19T00:50:29.798901+00:00",
+  "scope": "three invented policy cases",
+  "fixture_sha256": "da0630d964d3d9f0101fff75b0d7d6929c16e533adcc22c48b753b5d789db79b",
+  "request_attempts": 3,
+  "valid_choices": 3,
+  "correct_choices": 3,
+  "cases": [
+    {
+      "case": "supported",
+      "value": "B",
+      "input_tokens": 187,
+      "output_tokens": 35,
+      "expected": "B",
+      "latency_ms": 616.3
+    },
+    {
+      "case": "verification",
+      "value": "yes",
+      "input_tokens": 169,
+      "output_tokens": 31,
+      "expected": "yes",
+      "latency_ms": 447.0
+    },
+    {
+      "case": "override",
+      "value": "X",
+      "input_tokens": 189,
+      "output_tokens": 50,
+      "expected": "X",
+      "latency_ms": 701.5
+    }
+  ]
+}

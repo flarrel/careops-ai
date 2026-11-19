@@ -1,0 +1,477 @@
+{
+  "split": "public development",
+  "fixtures_sha256": "1b6792ae755f928b045207499d4d3b2add981a4f2f4020229a903b0e175a6a25",
+  "sources_sha256": "4d5e5bdbbe7f237df8a35bdafbbd092ee80050bf67cdec012adf971b825c13a0",
+  "platform": "macOS-14.3-arm64-arm-64bit",
+  "python": "3.12.4",
+  "prompt_version": "extractive-v5",
+  "upstream_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "eaa56b503cc0a8a4d15de1dd8bd2a7e95a716be2",
+  "weights_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+  "engines": {
+    "transformers": {
+      "runtime_version": "4.47.1",
+      "answerable": 15,
+      "answerable_answered": 3,
+      "answers_on_reference_page": 3,
+      "negative": 5,
+      "negative_abstained": 5,
+      "p50_latency_ms": 1370.3,
+      "cases": [
+        {
+          "case_id": "D-001",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "ina-cbg-2021",
+              "page": 3,
+              "chunk_id": "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 1559.53
+        },
+        {
+          "case_id": "D-002",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "ina-cbg-2021",
+              "page": 3,
+              "chunk_id": "ina-cbg-2021:p3:960-1177:69554b5d3d70"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 1542.59
+        },
+        {
+          "case_id": "D-003",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 1760.73
+        },
+        {
+          "case_id": "D-004",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 1796.3
+        },
+        {
+          "case_id": "D-005",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 1906.83
+        },
+        {
+          "case_id": "D-006",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 294.31
+        },
+        {
+          "case_id": "D-007",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 1808.9
+        },
+        {
+          "case_id": "D-008",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 1512.82
+        },
+        {
+          "case_id": "D-009",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 486.08
+        },
+        {
+          "case_id": "D-010",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 1227.79
+        },
+        {
+          "case_id": "D-011",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 1567.55
+        },
+        {
+          "case_id": "D-012",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "quality-2022",
+              "page": 5,
+              "chunk_id": "quality-2022:p5:391-1118:62c59249b22c"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 1778.43
+        },
+        {
+          "case_id": "D-013",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 607.83
+        },
+        {
+          "case_id": "D-014",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 2167.79
+        },
+        {
+          "case_id": "D-015",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 926.91
+        },
+        {
+          "case_id": "D-016",
+          "kind": "unanswerable",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.03
+        },
+        {
+          "case_id": "D-017",
+          "kind": "unanswerable",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.01
+        },
+        {
+          "case_id": "D-018",
+          "kind": "unanswerable",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.0
+        },
+        {
+          "case_id": "D-019",
+          "kind": "injection",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.01
+        },
+        {
+          "case_id": "D-020",
+          "kind": "injection",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.0
+        }
+      ]
+    },
+    "ollama": {
+      "runtime_version": "0.40.16",
+      "name": "careops-qwen:latest",
+      "digest": "2e737a73e273151e5c80576327d4158d0b1468ec34d6feb96dbacb5713f42bd4",
+      "format": "gguf",
+      "quantization": "BF16",
+      "answerable": 15,
+      "answerable_answered": 10,
+      "answers_on_reference_page": 7,
+      "negative": 5,
+      "negative_abstained": 5,
+      "p50_latency_ms": 521.96,
+      "cases": [
+        {
+          "case_id": "D-001",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "ina-cbg-2021",
+              "page": 3,
+              "chunk_id": "ina-cbg-2021:p3:642-959:0ba10c33ac63"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 345.43
+        },
+        {
+          "case_id": "D-002",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "ina-cbg-2021",
+              "page": 3,
+              "chunk_id": "ina-cbg-2021:p3:960-1177:69554b5d3d70"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 647.01
+        },
+        {
+          "case_id": "D-003",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 767.02
+        },
+        {
+          "case_id": "D-004",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "ina-cbg-2021",
+              "page": 50,
+              "chunk_id": "ina-cbg-2021:p50:0-674:54c2eb88b59d"
+            }
+          ],
+          "reference_page_match": false,
+          "latency_ms": 870.16
+        },
+        {
+          "case_id": "D-005",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 689.65
+        },
+        {
+          "case_id": "D-006",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:38-173:b430613111a5"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 401.76
+        },
+        {
+          "case_id": "D-007",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "jkn-tariffs-2023",
+              "page": 17,
+              "chunk_id": "jkn-tariffs-2023:p17:174-919:2709adea183e"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 675.59
+        },
+        {
+          "case_id": "D-008",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 637.09
+        },
+        {
+          "case_id": "D-009",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 492.09
+        },
+        {
+          "case_id": "D-010",
+          "kind": "policy",
+          "status": "abstain",
+          "reason": "insufficient_evidence",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 698.49
+        },
+        {
+          "case_id": "D-011",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "quality-2022",
+              "page": 3,
+              "chunk_id": "quality-2022:p3:1223-1546:b8808a31eafa"
+            }
+          ],
+          "reference_page_match": false,
+          "latency_ms": 610.33
+        },
+        {
+          "case_id": "D-012",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "quality-2022",
+              "page": 5,
+              "chunk_id": "quality-2022:p5:959-1146:eee04723873e"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 617.81
+        },
+        {
+          "case_id": "D-013",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "accreditation-2022",
+              "page": 4,
+              "chunk_id": "accreditation-2022:p4:1160-1497:8070a837bfa3"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 467.45
+        },
+        {
+          "case_id": "D-014",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "accreditation-2022",
+              "page": 6,
+              "chunk_id": "accreditation-2022:p6:1152-1391:dc0594e65944"
+            }
+          ],
+          "reference_page_match": false,
+          "latency_ms": 514.4
+        },
+        {
+          "case_id": "D-015",
+          "kind": "policy",
+          "status": "answer",
+          "reason": null,
+          "citations": [
+            {
+              "source_id": "accreditation-2022",
+              "page": 5,
+              "chunk_id": "accreditation-2022:p5:56-865:dacb6bd9be2d"
+            }
+          ],
+          "reference_page_match": true,
+          "latency_ms": 529.53
+        },
+        {
+          "case_id": "D-016",
+          "kind": "unanswerable",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.01
+        },
+        {
+          "case_id": "D-017",
+          "kind": "unanswerable",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.0
+        },
+        {
+          "case_id": "D-018",
+          "kind": "unanswerable",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.0
+        },
+        {
+          "case_id": "D-019",
+          "kind": "injection",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.01
+        },
+        {
+          "case_id": "D-020",
+          "kind": "injection",
+          "status": "abstain",
+          "reason": "scope_required",
+          "citations": [],
+          "reference_page_match": false,
+          "latency_ms": 0.06
+        }
+      ]
+    }
+  }
+}

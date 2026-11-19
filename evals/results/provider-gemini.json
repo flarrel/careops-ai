@@ -1,0 +1,36 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "utc": "2026-11-19T00:47:12.998761+00:00",
+  "scope": "three invented policy cases",
+  "fixture_sha256": "da0630d964d3d9f0101fff75b0d7d6929c16e533adcc22c48b753b5d789db79b",
+  "request_attempts": 3,
+  "valid_choices": 3,
+  "correct_choices": 3,
+  "cases": [
+    {
+      "case": "supported",
+      "value": "B",
+      "input_tokens": 116,
+      "output_tokens": 1,
+      "expected": "B",
+      "latency_ms": 1473.14
+    },
+    {
+      "case": "verification",
+      "value": "yes",
+      "input_tokens": 98,
+      "output_tokens": 1,
+      "expected": "yes",
+      "latency_ms": 692.68
+    },
+    {
+      "case": "override",
+      "value": "X",
+      "input_tokens": 119,
+      "output_tokens": 1,
+      "expected": "X",
+      "latency_ms": 1063.84
+    }
+  ]
+}

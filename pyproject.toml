@@ -10,6 +10,7 @@ requires-python = ">=3.12,<3.13"
 dependencies = []
 
 [project.optional-dependencies]
+providers = ["httpx==0.28.1", "httpx2==2.16.2", "anthropic==2.10.0"]
 storage = [
   "chromadb==1.5.9",
   "httpx==0.28.1",

@@ -189,7 +189,15 @@ class PolicyAnswerer:
         }
 
 
-def load_answerer(raw_directory=RAW, model_directory=GENERATION_DIRECTORY):
+def load_answerer(raw_directory=RAW, model_directory=GENERATION_DIRECTORY, *, engine="transformers"):
+    if engine not in ("transformers", "ollama"):
+        raise ValueError("Expected the transformers or ollama answer engine")
     sources = [row for row in load_sources() if row["case_split"] == "development"]
     index = LexicalIndex(load_chunks(sources, raw_directory))
-    return PolicyAnswerer(index, LocalGenerator(model_directory), sources)
+    if engine == "ollama":
+        from careops.providers.ollama import OllamaGenerator
+
+        generator = OllamaGenerator()
+    else:
+        generator = LocalGenerator(model_directory)
+    return PolicyAnswerer(index, generator, sources)
