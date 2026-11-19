@@ -1,0 +1,208 @@
+{
+  "workload": "local public development fixtures",
+  "host_cpu": "Apple M3 Pro",
+  "container": {
+    "image_id": "sha256:01a9a33cc3ab37a92a474592329f6608b325eba3403e9f44ef15f8025160beae",
+    "architecture": "arm64",
+    "image_bytes": 1324026388,
+    "torch": "2.14.1+cpu"
+  },
+  "kubernetes": {
+    "distribution": "K3s v1.35.5+k3s1",
+    "nodes": 1,
+    "replicas": 1,
+    "cpu_limit": 2,
+    "memory_limit_gib": 4,
+    "pod_history_scope": "emptyDir",
+    "service_account_token_mounted": false
+  },
+  "targets": [
+    {
+      "target": "docker",
+      "host": "macOS-14.3-arm64-arm-64bit",
+      "python": "3.12.4",
+      "fixture_sha256": "1b6792ae755f928b045207499d4d3b2add981a4f2f4020229a903b0e175a6a25",
+      "case_ids": [
+        "D-001",
+        "D-002",
+        "D-006",
+        "D-012"
+      ],
+      "concurrency": 4,
+      "results": {
+        "initial_queries": {
+          "requests": 4,
+          "questions": 4,
+          "outcomes": {
+            "answer": 3,
+            "abstain": 1
+          },
+          "p50_ms": 15970.18,
+          "p95_ms": 23944.02,
+          "requests_per_second": 0.17,
+          "input_bytes": 389,
+          "process_cpu_ms": 46856.41,
+          "peak_process_rss_bytes": 3533021184,
+          "policy_events": {
+            "cache_hit": 0,
+            "cache_miss": 4,
+            "scope_abstain": 0,
+            "model_answer": 4
+          }
+        },
+        "repeat_queries": {
+          "requests": 12,
+          "questions": 12,
+          "outcomes": {
+            "answer": 9,
+            "abstain": 3
+          },
+          "p50_ms": 3.71,
+          "p95_ms": 49.78,
+          "requests_per_second": 238.92,
+          "input_bytes": 1167,
+          "process_cpu_ms": 13.63,
+          "peak_process_rss_bytes": 3533021184,
+          "policy_events": {
+            "cache_hit": 12,
+            "cache_miss": 0,
+            "scope_abstain": 0,
+            "model_answer": 0
+          }
+        },
+        "mixed_batch": {
+          "requests": 1,
+          "questions": 8,
+          "outcomes": {
+            "answer": 5,
+            "abstain": 3
+          },
+          "p50_ms": 29.45,
+          "p95_ms": 29.45,
+          "requests_per_second": 33.51,
+          "input_bytes": 582,
+          "process_cpu_ms": 6.32,
+          "peak_process_rss_bytes": 3533021184,
+          "policy_events": {
+            "cache_hit": 4,
+            "cache_miss": 0,
+            "scope_abstain": 1,
+            "model_answer": 0
+          }
+        },
+        "stored_run_summaries": 21,
+        "security": {
+          "over_limit_status": 413,
+          "invalid_shape_status": 422,
+          "caller_request_id_rejected": true
+        }
+      }
+    },
+    {
+      "target": "kubernetes",
+      "host": "macOS-14.3-arm64-arm-64bit",
+      "python": "3.12.4",
+      "fixture_sha256": "1b6792ae755f928b045207499d4d3b2add981a4f2f4020229a903b0e175a6a25",
+      "case_ids": [
+        "D-001",
+        "D-002",
+        "D-006",
+        "D-012"
+      ],
+      "concurrency": 4,
+      "results": {
+        "initial_queries": {
+          "requests": 4,
+          "questions": 4,
+          "outcomes": {
+            "answer": 3,
+            "abstain": 1
+          },
+          "p50_ms": 14419.96,
+          "p95_ms": 26944.81,
+          "requests_per_second": 0.15,
+          "input_bytes": 389,
+          "process_cpu_ms": 52682.49,
+          "peak_process_rss_bytes": 3561676800,
+          "policy_events": {
+            "cache_hit": 0,
+            "cache_miss": 4,
+            "scope_abstain": 0,
+            "model_answer": 4
+          }
+        },
+        "repeat_queries": {
+          "requests": 12,
+          "questions": 12,
+          "outcomes": {
+            "answer": 9,
+            "abstain": 3
+          },
+          "p50_ms": 6.65,
+          "p95_ms": 22.11,
+          "requests_per_second": 390.69,
+          "input_bytes": 1167,
+          "process_cpu_ms": 18.18,
+          "peak_process_rss_bytes": 3561676800,
+          "policy_events": {
+            "cache_hit": 12,
+            "cache_miss": 0,
+            "scope_abstain": 0,
+            "model_answer": 0
+          }
+        },
+        "mixed_batch": {
+          "requests": 1,
+          "questions": 8,
+          "outcomes": {
+            "answer": 5,
+            "abstain": 3
+          },
+          "p50_ms": 7.98,
+          "p95_ms": 7.98,
+          "requests_per_second": 122.82,
+          "input_bytes": 582,
+          "process_cpu_ms": 5.85,
+          "peak_process_rss_bytes": 3561676800,
+          "policy_events": {
+            "cache_hit": 4,
+            "cache_miss": 0,
+            "scope_abstain": 1,
+            "model_answer": 0
+          }
+        },
+        "stored_run_summaries": 21,
+        "security": {
+          "over_limit_status": 413,
+          "invalid_shape_status": 422,
+          "caller_request_id_rejected": true
+        }
+      }
+    }
+  ],
+  "model_recovery": {
+    "missing_weights_ready_status": 503,
+    "missing_weights_answer_status": 503,
+    "restored_ready_status": 200,
+    "restored_answer_status": 200,
+    "cited_answer_after_restore": true,
+    "same_container": true,
+    "history_newest_first": [
+      "answer",
+      "error"
+    ]
+  },
+  "docker_history_across_restart": 21,
+  "redacted_request_trace_validated": [
+    "docker",
+    "kubernetes"
+  ],
+  "delivery_check": {
+    "workflow_lint": "actionlint 1.7.12",
+    "local_web_build_and_typecheck": true,
+    "local_container_smoke": true,
+    "archive_bytes": 371888587,
+    "archive_sha256": "819edc92fe2a8c5625e4d23795a22371643cc0e4c7b89b6ce1478ce57519ac4d",
+    "hosted_workflow_exercised": false
+  }
+}

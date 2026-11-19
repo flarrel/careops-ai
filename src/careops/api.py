@@ -5,28 +5,37 @@ import sqlite3
 from contextlib import asynccontextmanager
 from pathlib import Path
 from threading import Lock
-from time import monotonic
+from time import monotonic, perf_counter
 from typing import Annotated, Literal
 
-from fastapi import FastAPI, HTTPException, Path as PathArg, Query
+from fastapi import FastAPI, HTTPException, Path as PathArg, Query, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, PlainTextResponse
 from pydantic import BaseModel, ConfigDict, Field, StrictBool
 
 from careops.agent_tools import ClaimTask, StrictInput, SyntheticClaim
 from careops.agent_trace import JsonlTrace, start_event
 from careops.answer import MAX_QUERY_CHARS, load_answerer
 from careops.corpus import DEV_CLAIMS
+from careops.operations import Operations, PolicyRuntime, RequestOperations
 from careops.run_history import HISTORY_PATH, RunHistory
 
 APPROVAL_TTL = 600
 MAX_PENDING = 32
+MAX_BATCH = 8
 
 
 class AnswerRequest(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True, extra="forbid")
 
     query: str = Field(min_length=1, max_length=MAX_QUERY_CHARS)
+
+
+BatchQuery = Annotated[str, Field(min_length=1, max_length=MAX_QUERY_CHARS)]
+
+
+class BatchRequest(StrictInput):
+    queries: list[BatchQuery] = Field(min_length=1, max_length=MAX_BATCH)
 
 
 class Citation(BaseModel):
@@ -90,17 +99,11 @@ def create_app(load_service=load_answerer, *, history_path: Path = HISTORY_PATH,
     history = RunHistory(history_path)
     pending = {}
     pending_lock = Lock()
-    service_lock = Lock()
-    service = None
     agent = None
-
-    def policy_answer(query):
-        nonlocal service
-        with service_lock:
-            if service is None:
-                service = load_service()
-            answerer = service
-        return answerer.answer(query)
+    operations = Operations()
+    runtime = PolicyRuntime(load_service,
+                            lambda result: AnswerResponse.model_validate(result).model_dump(),
+                            operations, clock=clock)
 
     @asynccontextmanager
     async def lifespan(_app):
@@ -110,17 +113,14 @@ def create_app(load_service=load_answerer, *, history_path: Path = HISTORY_PATH,
 
     app = FastAPI(title="CareOps AI", lifespan=lifespan)
 
-    @app.middleware("http")
-    async def no_cache(request, call_next):
-        response = await call_next(request)
-        response.headers["Cache-Control"] = "no-store"
-        return response
+    app.add_middleware(RequestOperations, operations=operations,
+                       trace=JsonlTrace(history_path.with_name("api-requests.jsonl")))
 
     @app.exception_handler(RequestValidationError)
     async def invalid_request(_request, exc):
         # Pydantic's default error body can echo user-supplied values.
         fields = {"query", "claim_id", "max_amount_idr", "policy_query", "approved", "limit",
-                  "run_id", "kind"}
+                  "run_id", "kind", "queries"}
         invalid = sorted({item for error in exc.errors() for item in error["loc"]
                           if isinstance(item, str) and item in fields})
         detail = "Invalid request."
@@ -136,16 +136,46 @@ def create_app(load_service=load_answerer, *, history_path: Path = HISTORY_PATH,
     def health():
         return {"status": "ok"}
 
+    @app.get("/ready")
+    def ready():
+        try:
+            runtime.warm()
+            history.recent(1)
+        except (OSError, RuntimeError, ValueError, sqlite3.Error):
+            raise HTTPException(503, "Policy runtime is not ready.") from None
+        return {"status": "ready"}
+
+    @app.get("/metrics", response_class=PlainTextResponse)
+    def metrics():
+        return PlainTextResponse(operations.exposition(), media_type="text/plain; version=0.0.4")
+
     @app.post("/answer", response_model=AnswerResponse)
-    def answer(body: AnswerRequest):
+    def answer(body: AnswerRequest, request: Request):
         started = start_event()
         try:
-            result = AnswerResponse.model_validate(policy_answer(body.query))
-        except (OSError, RuntimeError, ValueError) as exc:
-            history.record("policy", {"status": "error", "reason": "policy_unavailable"}, started)
-            raise HTTPException(503, "Policy answer service unavailable") from exc
-        history.record("policy", result.model_dump(), started)
+            result = runtime.answer(body.query)
+        except (OSError, RuntimeError, ValueError):
+            history.record("policy", {"status": "error", "reason": "policy_unavailable"}, started,
+                           run_id=request.state.request_id)
+            raise HTTPException(503, "Policy answer service unavailable") from None
+        history.record("policy", result, started, run_id=request.state.request_id)
         return result
+
+    @app.post("/answers/batch", response_model=list[AnswerResponse])
+    def batch(body: BatchRequest, request: Request):
+        results = {}
+        entries = []
+        try:
+            for query in dict.fromkeys(body.queries):
+                started = start_event()
+                results[query] = runtime.answer(query)
+                entries.append((results[query], started, None, perf_counter()))
+        except (OSError, RuntimeError, ValueError):
+            history.record("policy", {"status": "error", "reason": "policy_unavailable"}, started,
+                           run_id=request.state.request_id)
+            raise HTTPException(503, "Policy answer service unavailable") from None
+        history.record_batch("policy", entries)
+        return [results[query] for query in body.queries]
 
     def expire(now):
         for run_id in [key for key, (expires, _) in pending.items() if expires <= now]:
@@ -164,7 +194,7 @@ def create_app(load_service=load_answerer, *, history_path: Path = HISTORY_PATH,
                     from careops.agent import load_agent
 
                     trace = JsonlTrace(history_path.with_name("api-agent-traces.jsonl"))
-                    agent = load_agent(policy_answer, trace, claims_path=claims_path)
+                    agent = load_agent(runtime.answer, trace, claims_path=claims_path)
                 run = agent.start(body.model_dump())
             except (OSError, RuntimeError, ValueError) as exc:
                 history.record("claim", {"status": "error", "reason": "review_unavailable"},

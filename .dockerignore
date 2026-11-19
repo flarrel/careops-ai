@@ -1,0 +1,9 @@
+.git
+.venv
+**/__pycache__
+models
+data/raw
+data/runtime
+app/web/node_modules
+app/web/.next
+integrations/php/laravel/vendor

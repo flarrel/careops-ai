@@ -1,0 +1,54 @@
+name: Build and verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-package:
+    runs-on: ubuntu-latest
+    env:
+      HF_HUB_OFFLINE: "1"
+      LANGSMITH_TRACING: "false"
+      NEXT_TELEMETRY_DISABLED: "1"
+      OMP_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app/web/package-lock.json
+      - name: Check service contracts and operations
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch==2.14.1+cpu'
+          python -m pip install -e '.[rag,agent,dev,integrations,providers]'
+          python -m unittest discover -s tests
+      - name: Compile the web client
+        working-directory: app/web
+        run: |
+          npm ci
+          npm run build
+          npm run typecheck
+      - name: Build and smoke-test the deployment image
+        run: |
+          docker build -f deploy/Dockerfile -t careops-ci:build .
+          bash deploy/check-image.sh careops-ci:build
+          docker save careops-ci:build | gzip > careops-image.tar.gz
+          sha256sum careops-image.tar.gz > careops-image.tar.gz.sha256
+      - name: Retain the deployment bundle
+        uses: actions/upload-artifact@v6
+        with:
+          name: careops-image
+          path: |
+            careops-image.tar.gz
+            careops-image.tar.gz.sha256
+          if-no-files-found: error

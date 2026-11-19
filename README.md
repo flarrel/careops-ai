@@ -26,6 +26,8 @@ The [storage comparison](docs/storage.md) checks synthetic claim persistence and
 
 The [model provider guide](docs/providers.md) describes the local runtimes and the synthetic cloud smoke command.
 
+The [operations guide](docs/operations.md) covers container deployment, readiness and metrics, and the local load and recovery checks.
+
 ## Foundation status
 
 The foundation defines the contracts, data policy, threat model, and reduced dependency profile. Run the dependency-free contract tests from the repository root with Python 3.12.

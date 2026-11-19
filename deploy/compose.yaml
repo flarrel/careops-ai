@@ -1,0 +1,28 @@
+services:
+  api:
+    image: careops-ops13:local
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports: ["127.0.0.1:8800:8000"]
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: ["/tmp:mode=1777"]
+    volumes:
+      - type: bind
+        source: ${CAREOPS_PDF_DIR:-../data/raw}
+        target: /service/data/raw
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${CAREOPS_MODEL_DIR:-../models/qwen2.5-0.5b-instruct}
+        target: /service/models/qwen2.5-0.5b-instruct
+        read_only: true
+        bind:
+          create_host_path: false
+      - run_data:/service/data/runtime
+
+volumes:
+  run_data:

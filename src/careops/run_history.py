@@ -33,14 +33,16 @@ class RunHistory:
             """)
 
     def record(self, kind, result, started, *, run_id=None):
-        timestamp, clock = started
+        self.record_batch(kind, [(result, started, run_id, perf_counter())])
+
+    def record_batch(self, kind, entries):
+        rows = []
+        for result, (timestamp, clock), run_id, finished in entries:
+            rows.append((run_id or uuid4().hex, kind, timestamp, result["status"],
+                         result.get("reason"), round((finished - clock) * 1000, 3),
+                         len(result.get("citations", [])), len(result.get("tool_calls", []))))
         with closing(self.connect()) as db, db:
-            db.execute(
-                "INSERT INTO runs VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-                (run_id or uuid4().hex, kind, timestamp, result["status"], result.get("reason"),
-                 round((perf_counter() - clock) * 1000, 3), len(result.get("citations", [])),
-                 len(result.get("tool_calls", []))),
-            )
+            db.executemany("INSERT INTO runs VALUES (?, ?, ?, ?, ?, ?, ?, ?)", rows)
 
     def recent(self, limit):
         with closing(self.connect()) as db:
