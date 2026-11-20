@@ -1,0 +1,101 @@
+{
+  "model": "Qwen2.5-0.5B-Instruct",
+  "experiments": {
+    "initial": {
+      "system": "You are a film storyboard artist. Choose the strongest visual for this shot.",
+      "decisions": [
+        {
+          "message": "{\"question\": \"Trace the answer\", \"subtitle\": \"A policy answer links to a source page.\", \"options\": {\"A\": \"A large animated confidence score\", \"B\": \"A visible source-page tab connected to the cited excerpt\", \"C\": \"A generic icon of a hospital\"}}",
+          "choice": "B",
+          "seconds": 0.462,
+          "editor_choice": "B"
+        },
+        {
+          "message": "{\"question\": \"Stop at missing evidence\", \"subtitle\": \"The service abstains when evidence is insufficient.\", \"options\": {\"A\": \"A broken evidence path ending in an amber abstention card\", \"B\": \"An answer generated from memory\", \"C\": \"A progress ring that ends in success\"}}",
+          "choice": "A",
+          "seconds": 0.143,
+          "editor_choice": "A"
+        },
+        {
+          "message": "{\"question\": \"Pause for human review\", \"subtitle\": \"The reviewer approves a read of a synthetic fixture.\", \"options\": {\"A\": \"The fixture opens before the reviewer arrives\", \"B\": \"A payment approved badge\", \"C\": \"A reviewer presses Allow lookup before the fixture appears\"}}",
+          "choice": "B",
+          "seconds": 0.142,
+          "editor_choice": "C"
+        }
+      ],
+      "editor_agreements": 2
+    },
+    "revised": {
+      "system": "You are directing a silent four-second product explainer. Choose the visual that makes the behavior in the subtitle observable. Use a concrete prop or action that shows the stated cause and effect. Do not add predictions, payment authority, or an outcome that contradicts the subtitle. Return its letter.",
+      "decisions": [
+        {
+          "message": "{\"question\": \"Trace the answer\", \"subtitle\": \"A policy answer links to a source page.\", \"options\": {\"A\": \"A large animated confidence score\", \"B\": \"A visible source-page tab connected to the cited excerpt\", \"C\": \"A generic icon of a hospital\"}}",
+          "choice": "B",
+          "seconds": 0.187,
+          "editor_choice": "B"
+        },
+        {
+          "message": "{\"question\": \"Stop at missing evidence\", \"subtitle\": \"The service abstains when evidence is insufficient.\", \"options\": {\"A\": \"A broken evidence path ending in an amber abstention card\", \"B\": \"An answer generated from memory\", \"C\": \"A progress ring that ends in success\"}}",
+          "choice": "A",
+          "seconds": 0.199,
+          "editor_choice": "A"
+        },
+        {
+          "message": "{\"question\": \"Pause for human review\", \"subtitle\": \"The reviewer approves a read of a synthetic fixture.\", \"options\": {\"A\": \"The fixture opens before the reviewer arrives\", \"B\": \"A payment approved badge\", \"C\": \"A reviewer presses Allow lookup before the fixture appears\"}}",
+          "choice": "B",
+          "seconds": 0.185,
+          "editor_choice": "C"
+        }
+      ],
+      "editor_agreements": 2
+    },
+    "source_checklist": {
+      "system": "Pick a letter for a four-second CareOps AI storyboard. A policy answer must show its source page. Missing evidence must show abstention. Human approval opens only a read-only synthetic fixture lookup, after the reviewer acts. A badge that says payment approved is wrong because this workflow does not approve payments. Choose the option that demonstrates the matching behavior. Return only the letter.",
+      "decisions": [
+        {
+          "message": "{\"question\": \"Trace the answer\", \"subtitle\": \"A policy answer links to a source page.\", \"options\": {\"A\": \"A large animated confidence score\", \"B\": \"A visible source-page tab connected to the cited excerpt\", \"C\": \"A generic icon of a hospital\"}}",
+          "choice": "A",
+          "seconds": 0.191,
+          "editor_choice": "B"
+        },
+        {
+          "message": "{\"question\": \"Stop at missing evidence\", \"subtitle\": \"The service abstains when evidence is insufficient.\", \"options\": {\"A\": \"A broken evidence path ending in an amber abstention card\", \"B\": \"An answer generated from memory\", \"C\": \"A progress ring that ends in success\"}}",
+          "choice": "A",
+          "seconds": 0.191,
+          "editor_choice": "A"
+        },
+        {
+          "message": "{\"question\": \"Pause for human review\", \"subtitle\": \"The reviewer approves a read of a synthetic fixture.\", \"options\": {\"A\": \"The fixture opens before the reviewer arrives\", \"B\": \"A payment approved badge\", \"C\": \"A reviewer presses Allow lookup before the fixture appears\"}}",
+          "choice": "A",
+          "seconds": 0.198,
+          "editor_choice": "C"
+        }
+      ],
+      "editor_agreements": 1
+    },
+    "visual_action": {
+      "system": "Choose a storyboard direction for the supplied subtitle. Prioritize the option that shows the actor performing the subtitle's verb on screen. Information shown in the shot cannot change the result of the software's action. A badge that shows a different outcome is always a worse fit. Answer with one option letter.",
+      "decisions": [
+        {
+          "message": "{\"question\": \"Trace the answer\", \"subtitle\": \"A policy answer links to a source page.\", \"options\": {\"A\": \"A large animated confidence score\", \"B\": \"A visible source-page tab connected to the cited excerpt\", \"C\": \"A generic icon of a hospital\"}}",
+          "choice": "B",
+          "seconds": 0.183,
+          "editor_choice": "B"
+        },
+        {
+          "message": "{\"question\": \"Stop at missing evidence\", \"subtitle\": \"The service abstains when evidence is insufficient.\", \"options\": {\"A\": \"A broken evidence path ending in an amber abstention card\", \"B\": \"An answer generated from memory\", \"C\": \"A progress ring that ends in success\"}}",
+          "choice": "A",
+          "seconds": 0.188,
+          "editor_choice": "A"
+        },
+        {
+          "message": "{\"question\": \"Pause for human review\", \"subtitle\": \"The reviewer approves a read of a synthetic fixture.\", \"options\": {\"A\": \"The fixture opens before the reviewer arrives\", \"B\": \"A payment approved badge\", \"C\": \"A reviewer presses Allow lookup before the fixture appears\"}}",
+          "choice": "A",
+          "seconds": 0.202,
+          "editor_choice": "C"
+        }
+      ],
+      "editor_agreements": 2
+    }
+  }
+}

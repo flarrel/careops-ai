@@ -1,0 +1,40 @@
+{
+  "title": "CareOps AI | From lookup to review",
+  "fps": 12,
+  "seconds_per_shot": 4,
+  "shots": [
+    {
+      "title": "Trace the answer",
+      "subtitle": "A policy answer links to a source page.",
+      "source": "docs/grounded-answers.md",
+      "focal_options": {
+        "A": "A large animated confidence score",
+        "B": "A visible source-page tab connected to the cited excerpt",
+        "C": "A generic icon of a hospital"
+      },
+      "focal_choice": "B"
+    },
+    {
+      "title": "Stop at missing evidence",
+      "subtitle": "The service abstains when evidence is insufficient.",
+      "source": "docs/grounded-answers.md",
+      "focal_options": {
+        "A": "A broken evidence path ending in an amber abstention card",
+        "B": "An answer generated from memory",
+        "C": "A progress ring that ends in success"
+      },
+      "focal_choice": "A"
+    },
+    {
+      "title": "Pause for human review",
+      "subtitle": "The reviewer approves a read of a synthetic fixture.",
+      "source": "docs/review-agent.md",
+      "focal_options": {
+        "A": "The fixture opens before the reviewer arrives",
+        "B": "A payment approved badge",
+        "C": "A reviewer presses Allow lookup before the fixture appears"
+      },
+      "focal_choice": "C"
+    }
+  ]
+}
