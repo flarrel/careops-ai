@@ -1,0 +1,205 @@
+{
+  "split": "checksum-verified holdout",
+  "seal_sha256": "3bd03d07eca8e3b01ad978d7d47c096ddd82a0fa69227c1acbb94fdb2912f217",
+  "source_manifest_sha256": "4d5e5bdbbe7f237df8a35bdafbbd092ee80050bf67cdec012adf971b825c13a0",
+  "environment": {
+    "os": "macOS-14.3-arm64-arm-64bit",
+    "machine": "MacBook Pro (Mac15,7), Apple M3 Pro, 36 GB",
+    "python": "3.12.4",
+    "device": "cpu",
+    "torch_threads": 4,
+    "packages": {
+      "torch": "2.14.1",
+      "transformers": "4.47.1",
+      "pypdf": "7.1.1",
+      "scikit-learn": "1.6.1",
+      "langgraph": "0.2.60",
+      "fastapi": "0.115.6"
+    }
+  },
+  "models": {
+    "generation": {
+      "repository": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "eaa56b503cc0a8a4d15de1dd8bd2a7e95a716be2"
+    },
+    "embedding": {
+      "repository": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3"
+    }
+  },
+  "configuration": {
+    "indexed_documents": 10,
+    "chunks": 909,
+    "prompt": "extractive-v5",
+    "prompt_sha256": "91715a1f099de7338f5fa2d6a6f9ccae882d7634def97904e464571b30d0bcc8",
+    "answer_top_k": 20,
+    "retrieval_k": 5,
+    "index_build_ms": 18912.58
+  },
+  "retrieval": {
+    "tfidf": {
+      "recall_at_5": 0.7333,
+      "mrr_at_5": 0.5222,
+      "citation_source_hit_rate_at_5": 0.9333,
+      "p50_ms": 0.6,
+      "p95_ms": 0.87,
+      "numeric_payload_bytes": 1184168
+    },
+    "dense": {
+      "recall_at_5": 0.6,
+      "mrr_at_5": 0.4667,
+      "citation_source_hit_rate_at_5": 1,
+      "p50_ms": 15.86,
+      "p95_ms": 17.65,
+      "numeric_payload_bytes": 1396224
+    },
+    "reranked": {
+      "recall_at_5": 0.9333,
+      "mrr_at_5": 0.5822,
+      "citation_source_hit_rate_at_5": 1,
+      "p50_ms": 16.23,
+      "p95_ms": 17.73,
+      "numeric_payload_bytes": 2580392
+    }
+  },
+  "tools": {
+    "cases": 5,
+    "statuses": {
+      "escalate": 3,
+      "review": 1,
+      "abstain": 1
+    },
+    "schema_valid_results": 5,
+    "validated_trace_events": 28,
+    "attempts_by_tool": {
+      "lookup_synthetic_claim": 7
+    },
+    "workflow_success": 5,
+    "direct_success": 0,
+    "fields_correct": 5,
+    "fields_total": 5,
+    "escalations_correct": 3,
+    "escalations_expected": 3,
+    "preapproval_tool_attempts": 0,
+    "denial_blocks_lookup": true,
+    "timeout_escalates_after_retry": true,
+    "malformed_rejected": 2,
+    "unauthorized_tool_attempts": 0,
+    "redaction_passed": true,
+    "approved_decision_timing": {
+      "n": 5,
+      "p50_ms": 1.4,
+      "p95_ms": 1.76,
+      "requests_per_second": 682.29
+    }
+  },
+  "runtime": {
+    "transport": "in-process FastAPI TestClient",
+    "fixture_split": "development",
+    "recovery_after_injected_load_error": true,
+    "model_load_and_readiness_ms": 2842.97,
+    "timing": {
+      "first": {
+        "n": 8,
+        "p50_ms": 1718.72,
+        "p95_ms": 2079.75,
+        "requests_per_second": 0.63
+      },
+      "repeat": {
+        "n": 8,
+        "p50_ms": 1.02,
+        "p95_ms": 1.58,
+        "requests_per_second": 914.73
+      }
+    },
+    "batch_ms": 2.33,
+    "batch_order_and_repeat_stable": true,
+    "history_rows": 19,
+    "expected_history_rows": 19,
+    "history_ids_unique": true,
+    "malformed_status": 422,
+    "oversized_status": 413,
+    "redaction_passed": true,
+    "policy_counters": {
+      "cache_hit": "10",
+      "cache_miss": "9",
+      "model_answer": "8",
+      "model_load": "2",
+      "model_load_error": "1"
+    }
+  },
+  "process": {
+    "peak_rss_bytes": 4499423232,
+    "cpu_seconds": 115.62,
+    "wall_seconds": 86.8
+  },
+  "generation": {
+    "grounded": {
+      "answerable_accuracy": 0.0667,
+      "answerable_coverage": 0.2667,
+      "unanswerable_abstention": 1.0,
+      "instruction_boundary_abstention": 1.0,
+      "unsupported_answer_rate": 0.75,
+      "citation_precision": 0.25
+    },
+    "baseline": {
+      "answerable_accuracy": 0.0,
+      "answerable_coverage": 1.0,
+      "unanswerable_abstention": 0.0,
+      "instruction_boundary_abstention": 0.0,
+      "unsupported_answer_rate": 1.0,
+      "citation_precision": null
+    },
+    "policy_failure_breakdown": {
+      "unsupported_returned": 3,
+      "supported": 1,
+      "abstained_with_expected_page_excluded_by_scope": 1,
+      "abstained_despite_eligible_expected_page": 10
+    },
+    "maintained_development_index": {
+      "abstained": 14,
+      "returned_from_different_source_family": 1
+    },
+    "timing": {
+      "grounded": {
+        "n": 20,
+        "p50_ms": 1371.21,
+        "p95_ms": 1925.89,
+        "requests_per_second": 1.0
+      },
+      "baseline": {
+        "n": 20,
+        "p50_ms": 1378.61,
+        "p95_ms": 1587.23,
+        "requests_per_second": 0.82
+      },
+      "maintained": {
+        "n": 20,
+        "p50_ms": 0.72,
+        "p95_ms": 856.45,
+        "requests_per_second": 7.47
+      }
+    }
+  },
+  "gates": {
+    "dense_alone_improves_recall_or_mrr": false,
+    "hybrid_improves_recall_or_mrr": true,
+    "citation_precision_at_least_0.90": false,
+    "unanswerable_abstention_at_least_0.90": true,
+    "synthetic_tool_task_success_at_least_0.80": true,
+    "all_tool_outputs_schema_valid": true,
+    "synthetic_structured_fields_accuracy_at_least_0.90": true,
+    "tool_and_trace_boundaries": true,
+    "runtime_history_and_controlled_errors": true
+  },
+  "case_counts": {
+    "policy": 15,
+    "unanswerable": 3,
+    "injection": 2,
+    "tool": 5
+  },
+  "reproduction": {
+    "matching_answer_path_outcomes": 60,
+    "matching_ranked_queries": 45
+  }
+}

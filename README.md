@@ -14,7 +14,7 @@ source files + synthetic claims -> ingestion -> retrieval -> evidence packet
                                                       Streamlit
 ```
 
-The project will use public, provenance-recorded policy material and project-owned synthetic records. It is not medical advice, a clinical decision system, a live claims processor, or a substitute for professional review.
+The project uses provenance-recorded public policy material and project-owned synthetic records. It is not medical advice, a clinical decision system, a live claims processor, or a substitute for professional review.
 
 ## Run the application
 
@@ -30,7 +30,11 @@ The [operations guide](docs/operations.md) covers container deployment, readines
 
 The [short explainer](docs/creative.md) illustrates cited answers, abstention, and human approval for synthetic fixture lookup.
 
-## Foundation status
+## Evaluation
+
+The final local holdout found reference pages for 14 of 15 questions with hybrid retrieval. The evaluated TF-IDF/Qwen answer path produced one supported answer and missed its citation-precision gate. The approval-gated synthetic workflow matched all five held-out tool tasks. [Methods, results, and limitations](docs/evaluation.md)
+
+## Tests
 
 The foundation defines the contracts, data policy, threat model, and reduced dependency profile. Run the dependency-free contract tests from the repository root with Python 3.12.
 
@@ -62,7 +66,7 @@ The [synthetic fixture model lab](docs/model-lab.md) covers data mining, cluster
 
 The [FLAN-T5 fine-tuning lab](docs/finetune.md) compares prompt-only and fine-tuned routing on held-out synthetic claims.
 
-## Planned runtime
+## Runtime
 
 - Python 3.12
 - FastAPI and Pydantic for typed service contracts

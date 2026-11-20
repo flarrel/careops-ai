@@ -96,13 +96,14 @@ def prediction_digest(prediction):
 
 
 
-def summarize(predictions, judgments):
-    cases = load_development_cases()
+def summarize(predictions, judgments, cases=None):
+    if cases is None:
+        cases = load_development_cases()
     outputs = {row["case_id"]: row for row in predictions["cases"]}
     reviewed = {row["case_id"]: row for row in judgments}
     expected_ids = {case["case_id"] for case in cases}
     if outputs.keys() != expected_ids or reviewed.keys() != expected_ids:
-        raise ValueError("Predictions and judgments must cover the same development cases")
+        raise ValueError("Predictions and judgments must cover the same evaluation cases")
     if len(outputs) != len(predictions["cases"]) or len(reviewed) != len(judgments):
         raise ValueError("Duplicate case ID")
 
